@@ -19,7 +19,7 @@ export default class Nav extends Component{
                   </a>
                 </li>
                 <li className="nav-item has-treeview">
-                  <a href="#" className="nav-link">
+                  <a href="#0" className="nav-link">
                     <i className="nav-icon fas fa-copy"></i>
                     <p> Article Settings
                       <i className="fas fa-angle-left right"></i>
@@ -27,9 +27,9 @@ export default class Nav extends Component{
                   </a>
                   <ul className="nav nav-treeview">
                     <li className="nav-item">
-                      <a href="/" className="nav-link">
+                      <a href="/category" className="nav-link">
                         <i className="far fa-circle nav-icon"></i>
-                        <p>Add Category</p>
+                        <p>Category</p>
                       </a>
                     </li>
                     <li className="nav-item">
@@ -42,7 +42,7 @@ export default class Nav extends Component{
                     <li className="nav-item">
                       <a href="/" className="nav-link">
                         <i className="far fa-circle nav-icon"></i>
-                        <p>Add Location</p>
+                        <p>Location</p>
                       </a>
                     </li>
                     <li className="nav-item">
@@ -53,9 +53,9 @@ export default class Nav extends Component{
                     </li>
                   </ul>
                 </li>
-                <li className="nav-header">EXAMPLES</li>
+                <li className="nav-header">Other</li>
                 <li className="nav-item has-treeview">
-                  <a href="#" className="nav-link">
+                  <a href="#0" className="nav-link">
                     <i className="nav-icon far fa-envelope"></i>
                     <p>
                       Mailbox

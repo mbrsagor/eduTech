@@ -3,8 +3,8 @@ import './App.css';
 import { Switch, Route } from "react-router-dom";
 
 // All component
-import Header from './component/common/Header';
 import Sidebar from './component/common/Sidebar';
+import Category from './component/pages/Category'
 
 export default class App extends Component{
   render(){
@@ -12,7 +12,7 @@ export default class App extends Component{
       <React.Fragment>
         <Sidebar />
         <Switch>
-        {/* <Route exact path="/" component={Header} /> */}
+          <Route exact path="/category" component={Category} />
         </Switch>
       </React.Fragment>
     )

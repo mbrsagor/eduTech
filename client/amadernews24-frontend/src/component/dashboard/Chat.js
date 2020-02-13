@@ -32,7 +32,7 @@ export default class Chat extends Component {
                     <span className="direct-chat-timestamp float-right">23 Jan 2:00 pm</span>
                     </div>
                     
-                    <img className="direct-chat-img" src="assets/dist/img/user1-128x128.jpg" alt="message user image"/>
+                    <img className="direct-chat-img" src="assets/dist/img/user1-128x128.jpg" alt="user"/>
                     
                     <div className="direct-chat-text">
                     Is this template really for free? That's unbelievable!
@@ -45,7 +45,7 @@ export default class Chat extends Component {
                     <span className="direct-chat-timestamp float-left">23 Jan 2:05 pm</span>
                     </div>
                     
-                    <img className="direct-chat-img" src="assets/dist/img/user3-128x128.jpg" alt="message user image"/>
+                    <img className="direct-chat-img" src="assets/dist/img/user3-128x128.jpg" alt="user"/>
                     
                     <div className="direct-chat-text">
                     You better believe it!
@@ -57,7 +57,7 @@ export default class Chat extends Component {
                     <span className="direct-chat-timestamp float-right">23 Jan 5:37 pm</span>
                     </div>
                 
-                    <img className="direct-chat-img" src="assets/dist/img/user1-128x128.jpg" alt="message user image"/>
+                    <img className="direct-chat-img" src="assets/dist/img/user1-128x128.jpg" alt="user"/>
                 
                     <div className="direct-chat-text">
                     Working with AdminLTE on a great new app! Wanna join?
@@ -70,7 +70,7 @@ export default class Chat extends Component {
                     <span className="direct-chat-timestamp float-left">23 Jan 6:10 pm</span>
                     </div>
                     
-                    <img className="direct-chat-img" src="assets/dist/img/user3-128x128.jpg" alt="message user image"/>
+                    <img className="direct-chat-img" src="assets/dist/img/user3-128x128.jpg" alt="user"/>
                     
                     <div className="direct-chat-text">
                     I would love to.
@@ -81,8 +81,8 @@ export default class Chat extends Component {
                 <div className="direct-chat-contacts">
                 <ul className="contacts-list">
                     <li>
-                    <a href="#">
-                        <img className="contacts-list-img" src="assets/dist/img/user1-128x128.jpg"/>
+                    <a href="#0">
+                        <img className="contacts-list-img" src="assets/dist/img/user1-128x128.jpg" alt="Author"/>
 
                         <div className="contacts-list-info">
                         <span className="contacts-list-name">
@@ -96,8 +96,8 @@ export default class Chat extends Component {
                     </li>
                     
                     <li>
-                    <a href="#">
-                        <img className="contacts-list-img" src="assets/dist/img/user7-128x128.jpg"/>
+                    <a href="#0">
+                        <img className="contacts-list-img" src="assets/dist/img/user7-128x128.jpg" alt="Author"/>
 
                         <div className="contacts-list-info">
                         <span className="contacts-list-name">
@@ -111,8 +111,8 @@ export default class Chat extends Component {
                     </li>
                     
                     <li>
-                    <a href="#">
-                        <img className="contacts-list-img" src="assets/dist/img/user3-128x128.jpg"/>
+                    <a href="#0">
+                        <img className="contacts-list-img" src="assets/dist/img/user3-128x128.jpg" alt="Author"/>
 
                         <div className="contacts-list-info">
                         <span className="contacts-list-name">
@@ -126,8 +126,8 @@ export default class Chat extends Component {
                     </li>
                 
                     <li>
-                    <a href="#">
-                        <img className="contacts-list-img" src="assets/dist/img/user5-128x128.jpg"/>
+                    <a href="#0">
+                        <img className="contacts-list-img" src="assets/dist/img/user5-128x128.jpg" alt="Author"/>
 
                         <div className="contacts-list-info">
                         <span className="contacts-list-name">
@@ -141,8 +141,8 @@ export default class Chat extends Component {
                     </li>
                 
                     <li>
-                    <a href="#">
-                        <img className="contacts-list-img" src="assets/dist/img/user6-128x128.jpg"/>
+                    <a href="#0">
+                        <img className="contacts-list-img" src="assets/dist/img/user6-128x128.jpg" alt="Author"/>
 
                         <div className="contacts-list-info">
                         <span className="contacts-list-name">
@@ -156,8 +156,8 @@ export default class Chat extends Component {
                     </li>
                 
                     <li>
-                    <a href="#">
-                        <img className="contacts-list-img" src="assets/dist/img/user8-128x128.jpg"/>
+                    <a href="#0">
+                        <img className="contacts-list-img" src="assets/dist/img/user8-128x128.jpg" alt="Author"/>
 
                         <div className="contacts-list-info">
                         <span className="contacts-list-name">
@@ -172,7 +172,7 @@ export default class Chat extends Component {
                 </div>
             </div>
             <div className="card-footer">
-                <form action="#" method="post">
+                <form action="#0" method="post">
                 <div className="input-group">
                     <input type="text" name="message" placeholder="Type Message ..." className="form-control"/>
                     <span className="input-group-append">

@@ -4,12 +4,12 @@ export default class Messages extends Component {
     render(){
         return(
             <div>
-                <a className="nav-link" data-toggle="dropdown" href="#">
+                <a className="nav-link" data-toggle="dropdown" href="#0">
                         <i className="far fa-comments"></i>
                         <span className="badge badge-danger navbar-badge">3</span>
                         </a>
                         <div className="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                        <a href="#" className="dropdown-item">
+                        <a href="#0" className="dropdown-item">
                         
                             <div className="media">
                             <img src="assets/dist/img/user1-128x128.jpg" alt="User Avatar" className="img-size-50 mr-3 img-circle"/>
@@ -25,7 +25,7 @@ export default class Messages extends Component {
                         
                         </a>
                         <div className="dropdown-divider"></div>
-                        <a href="#" className="dropdown-item">
+                        <a href="#0" className="dropdown-item">
                         
                             <div className="media">
                             <img src="assets/dist/img/user8-128x128.jpg" alt="User Avatar" className="img-size-50 img-circle mr-3"/>
@@ -41,7 +41,7 @@ export default class Messages extends Component {
                         
                         </a>
                         <div className="dropdown-divider"></div>
-                        <a href="#" className="dropdown-item">
+                        <a href="#0" className="dropdown-item">
                         
                             <div className="media">
                             <img src="assets/dist/img/user3-128x128.jpg" alt="User Avatar" className="img-size-50 img-circle mr-3"/>
@@ -57,7 +57,7 @@ export default class Messages extends Component {
                             
                         </a>
                         <div className="dropdown-divider"></div>
-                        <a href="#" className="dropdown-item dropdown-footer">See All Messages</a>
+                        <a href="#0" className="dropdown-item dropdown-footer">See All Messages</a>
                         </div>
             </div>
         )

@@ -18,10 +18,10 @@ export default class Calendar extends Component {
                             <button type="button" className="btn btn-success btn-sm dropdown-toggle" data-toggle="dropdown">
                             <i className="fas fa-bars"></i></button>
                             <div className="dropdown-menu float-right" role="menu">
-                            <a href="#" className="dropdown-item">Add new event</a>
-                            <a href="#" className="dropdown-item">Clear events</a>
+                            <a href="#0" className="dropdown-item">Add new event</a>
+                            <a href="#0" className="dropdown-item">Clear events</a>
                             <div className="dropdown-divider"></div>
-                            <a href="#" className="dropdown-item">View calendar</a>
+                            <a href="#0" className="dropdown-item">View calendar</a>
                             </div>
                         </div>
                         <button type="button" className="btn btn-success btn-sm" data-card-widget="collapse">
