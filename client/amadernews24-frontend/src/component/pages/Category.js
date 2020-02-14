@@ -1,11 +1,10 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 
 class Category extends Component {
     render(){
         return(
-            <h2>Category page</h2>
+            <h1>Hello world sagor</h1>
         )
     }
 }
-
 export default Category

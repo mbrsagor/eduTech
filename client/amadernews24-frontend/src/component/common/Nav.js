@@ -13,7 +13,7 @@ export default class Nav extends Component{
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a href="#0" className="nav-link">
+                  <a href="/page" className="nav-link">
                     <i className="nav-icon fas fa-edit"></i>
                     <p>Add New Article</p>
                   </a>

@@ -11,7 +11,7 @@ export default class Sidebar extends Component {
             <div className="wrapper">
                 <Header/>
                 <aside className="main-sidebar sidebar-dark-primary elevation-4">
-                    <a href="index3.html" className="brand-link">
+                    <a href="/" className="brand-link">
                     <img src="assets/dist/img/AdminLTELogo.png" alt="Logo" className="brand-image img-circle elevation-3"
                         />
                     <span className="brand-text font-weight-light">Amader-News24</span>
@@ -30,26 +30,7 @@ export default class Sidebar extends Component {
                         <Nav/>
                     </div>
                 </aside>
-                <div className="content-wrapper">
-                    <div className="content-header">
-                    <div className="container-fluid">
-                        <div className="row mb-2">
-                        <div className="col-sm-6">
-                            <h1 className="m-0 text-dark">Dashboard</h1>
-                        </div>
-                        <div className="col-sm-6">
-                            <ol className="breadcrumb float-sm-right">
-                                <li className="breadcrumb-item"><a href="/">Home</a></li>
-                                <li className="breadcrumb-item active">Dashboard</li>
-                            </ol>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                    <Dashboard/>
-                </div>
-            <Footer />
-        </div>
+            </div>
         )
     }
 }
