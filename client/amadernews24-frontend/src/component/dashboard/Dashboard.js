@@ -10,6 +10,7 @@ export default class Dashboard extends Component {
         return(
             <>
                 <div className="content-wrapper">
+                    {/* Page title start */}
                     <div className="content-header">
                         <div className="container-fluid">
                             <div className="row mb-2">
@@ -25,7 +26,9 @@ export default class Dashboard extends Component {
                             </div>
                         </div>
                     </div>
-                
+                     {/* Page title end */}
+
+                    {/* Main-content start */}
                     <section className="content">
                         <div className="container-fluid">
                             <TotalCount/>
@@ -40,6 +43,7 @@ export default class Dashboard extends Component {
                             </div>
                         </div>
                     </section>
+                    {/* Main-content end */}
                 </div>
                 <Footer />
             </>
