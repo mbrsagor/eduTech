@@ -1,12 +1,53 @@
-.sidebar-dark-primary .nav-sidebar>.nav-item>.nav-link.active, .sidebar-light-primary .nav-sidebar>.nav-item>.nav-link.active {
-  background-color: #343a40 !important;
-}
 .note-editor.note-frame .note-editing-area .note-editable {
   height: 270px;
 }
+
 .backend_category_list {
   max-height: 130px;
   border: 1px solid #cec6c6;
   padding: 10px;
   overflow: scroll;
+}
+
+.layout-fixed .main-sidebar {
+  background: #ffffff;
+}
+
+.nav-pills .nav-link {
+  color: #343a40 !important;
+}
+
+.nav-header {
+  color: #343a40 !important;
+}
+
+.sidebar-dark-primary .nav-sidebar>.nav-item>.nav-link.active {
+  background-color: #3c8dbc;
+  border-color: #3c8dbc;
+  color: #fff !important;
+  transition: .6s;
+}
+
+.sidebar-dark-primary .nav-sidebar .nav-item:hover {
+  background-color: #3c8dbc;
+  color: #fff !important;
+}
+
+.sidebar-dark-primary .nav-sidebar .nav-item a:hover {
+  color: #fff !important;
+}
+
+.brand-link {
+  color: #343a40 !important;
+}
+
+.card-header .btn-primary {
+  background-color: #3C8DBC !important;
+  border-color: #3C8DBC !important;
+  transition: .6s;
+}
+
+.card-header .btn-primary:hover {
+  background-color: #0798ec !important;
+  border-color: #0798ec !important;
 }
