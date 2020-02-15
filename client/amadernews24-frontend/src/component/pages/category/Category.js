@@ -57,7 +57,7 @@ class Category extends Component {
                                             Explorer 4.0
                                         </td>
                                         <td>Win 95+</td>
-                                        <td>YES</td>
+                                        <td>Deactive</td>
                                         <td>YES</td>
                                         <td>02-FEB-2020, 12:00PM</td>
                                         <td>

@@ -6,7 +6,7 @@ export default class Footer extends Component {
             <footer className="main-footer">
                 <strong>Copyright &copy; 2020 <a href="/">Amader news 24 hours</a>.</strong> All rights reserved.
                 <div className="float-right d-none d-sm-inline-block">
-                    <b>Online</b> news potal
+                    <b>Dashboard</b>
                 </div>
             </footer>
         )
