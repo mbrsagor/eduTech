@@ -2,5 +2,11 @@
   background-color: #343a40 !important;
 }
 .note-editor.note-frame .note-editing-area .note-editable {
-  height: 350px;
+  height: 270px;
+}
+.backend_category_list {
+  max-height: 130px;
+  border: 1px solid #cec6c6;
+  padding: 10px;
+  overflow: scroll;
 }
