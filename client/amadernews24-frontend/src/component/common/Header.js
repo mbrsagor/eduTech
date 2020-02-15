@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Messages from '../alart/Messages'
 import Notifications from '../alart/Notifications'
+import HeaderUser from '../alart/HeaderUser' 
 
 export default class Header extends Component{
     
@@ -18,6 +19,9 @@ export default class Header extends Component{
                     </li>
                     <li className="nav-item dropdown">
                         <Notifications />
+                    </li>
+                    <li class="nav-item dropdown user-menu">
+                        <HeaderUser />
                     </li>
                 </ul>
             </nav>

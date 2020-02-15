@@ -1,12 +1,13 @@
 import React, {Component} from 'react'
 import Footer from '../../common/Footer'
 import AddLocation from './modal/AddLocation'
-
+import Sidebar from '../../common/Sidebar'
 
 class Location extends Component {
     render(){
         return(
             <>
+                <Sidebar />
                 <div className="content-wrapper">
                     {/* Page title start */}
                     <div className="content-header">

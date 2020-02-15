@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import Footer from '../../common/Footer'
+import Sidebar from '../../common/Sidebar'
 
 export default class Article extends Component {
     render(){
         return(
             <>
+                <Sidebar />
                 <div className="content-wrapper">
                     {/* Page title start */}
                     <div className="content-header">

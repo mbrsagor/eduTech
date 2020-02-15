@@ -4,11 +4,13 @@ import Calendar from './Calendar'
 import Chat from './Chat'
 import Visitors from './Visitors'
 import Footer from '../common/Footer'
+import Sidebar from '../common/Sidebar'
 
 export default class Dashboard extends Component {
     render(){
         return(
-            <>
+            <>  
+                <Sidebar />
                 <div className="content-wrapper">
                     {/* Page title start */}
                     <div className="content-header">

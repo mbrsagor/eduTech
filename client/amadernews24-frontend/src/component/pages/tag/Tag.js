@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import Footer from '../../common/Footer'
 import AddTag from './modal/AddTag'
-
+import Sidebar from '../../common/Sidebar'
 
 class Tag extends Component {
     render(){
         return(
             <>
+              <Sidebar />
               <div className="content-wrapper">
                     {/* Page title start */}
                     <div className="content-header">
