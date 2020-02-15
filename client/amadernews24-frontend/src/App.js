@@ -4,7 +4,7 @@ import { Switch, Route } from "react-router-dom";
 
 // All component
 import Sidebar from './component/common/Sidebar';
-import Category from './component/pages/Category'
+import Category from './component/pages/category/Category'
 import Dashboard from './component/dashboard/Dashboard'
 
 export default class App extends Component{
