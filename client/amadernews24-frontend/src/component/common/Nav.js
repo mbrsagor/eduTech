@@ -33,7 +33,7 @@ export default class Nav extends Component{
                       </a>
                     </li>
                     <li className="nav-item">
-                      <a href="/" className="nav-link">
+                      <a href="/tag" className="nav-link">
                         <i className="far fa-circle nav-icon"></i>
                         <p>Tags</p>
                       </a>
