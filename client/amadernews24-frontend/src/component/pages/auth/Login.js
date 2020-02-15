@@ -10,7 +10,7 @@ class Login extends Component {
                     </div>
                     <div className="card">
                         <div className="card-body login-card-body">
-                        <p className="login-box-msg">Sign in to start your session</p>
+                        <p className="login-box-msg">Sign In</p>
 
                         <form action="/" method="post">
                             <div className="input-group mb-3">
@@ -39,25 +39,13 @@ class Login extends Component {
                                     </div>
                                 </div>
                                 <div className="col-4">
-                                    <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                                    <button type="submit" class="btn btn-primary btn-block btn-sm">Sign In</button>
                                 </div>
                             </div>
                         </form>
-
-                        <div className="social-auth-links text-center mb-3">
-                            <p>- OR -</p>
-                            <a href="#0" className="btn btn-block btn-primary">
-                            <i className="fab fa-facebook mr-2"></i> Sign in using Facebook
-                            </a>
-                            <a href="#0" className="btn btn-block btn-danger">
-                            <i className="fab fa-google-plus mr-2"></i> Sign in using Google+
-                            </a>
-                        </div>
                         <p className="mb-1">
-                            <a href="#0">I forgot my password</a>
-                        </p>
-                        <p className="mb-0">
-                            <a href="#0" className="text-center">Register a new membership</a>
+                            <br />
+                            <a className="mr-5" href="/forgot-password">Forgot my password</a> <a href="/registration" className="text-center">Register a user</a>
                         </p>
                         </div>
                     </div>

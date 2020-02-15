@@ -9,6 +9,8 @@ import Article from './component/pages/article/Article'
 import Location from './component/pages/location/Location'
 import Dashboard from './component/dashboard/Dashboard'
 import Login from './component/pages/auth/Login'
+import Registeration from './component/pages/auth/Registeration'
+import ForgotPassword from './component/pages/auth/ForgotPassword'
 
 export default class App extends Component{
   render(){
@@ -21,6 +23,8 @@ export default class App extends Component{
           <Route exact path="/location" component={Location} />
           <Route exact path="/add-new-article" component={Article} />
           <Route exact path="/login" component={Login} />
+          <Route exact path="/registration" component={Registeration} />
+          <Route exact path="/forgot-password" component={ForgotPassword} />
         </Switch>
       </React.Fragment>
     )
