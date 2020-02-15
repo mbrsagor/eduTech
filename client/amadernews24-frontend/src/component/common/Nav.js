@@ -40,15 +40,9 @@ export default class Nav extends Component{
                     </li>
 
                     <li className="nav-item">
-                      <a href="/" className="nav-link">
+                      <a href="/location" className="nav-link">
                         <i className="far fa-circle nav-icon"></i>
                         <p>Location</p>
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a href="#0" className="nav-link">
-                        <i className="far fa-circle nav-icon"></i>
-                        <p>Add Menu</p>
                       </a>
                     </li>
                   </ul>
