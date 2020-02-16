@@ -18,7 +18,7 @@ class CategorySerializer(serializers.ModelSerializer):
 class TagsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Tags
-        fields = ['id', 'name']
+        fields = ['id', 'name', 'created_at', 'updated_at']
 
 
 class LocationSerializer(serializers.ModelSerializer):

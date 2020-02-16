@@ -2,8 +2,41 @@ import React, { Component } from 'react'
 import Footer from '../../common/Footer'
 import AddTag from './modal/AddTag'
 import Sidebar from '../../common/Sidebar'
+import ArticleTagService from '../../services/ArticleTagService'
+
+const articleTagService = new ArticleTagService()
 
 class Tag extends Component {
+
+    constructor(props){
+        super(props);
+        this.state = {
+            tags : [],
+        };
+        
+        this.handleDelete  =  this.handleDelete.bind(this);
+    }
+
+    componentDidMount(){
+        var self = this;
+        articleTagService.getArticleTag().then(function(result){
+            console.log(result);
+            self.setState({tags:result})
+        });
+    }
+
+    handleDelete(e, id){
+        var  self  =  this;
+        articleTagService.deleteArticelTag({id : id}).then(() =>{
+            var _tag = self.state.tags.filter(function(obj){
+                return obj.id !== id;
+            });
+            self.setState({tags: _tag});
+        }).catch(()=>{
+            alert('There was an error! Please re-check your form.');
+        });
+    }
+
     render(){
         return(
             <>
@@ -50,15 +83,17 @@ class Tag extends Component {
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <tr>
-                                        <td>Hot news</td>
-                                        <td>02-FEB-2020, 12:00PM</td>
-                                        <td>02-FEB-2020, 12:00PM</td>
-                                        <td>
-                                            <button title="You may update the tag from here" type="button" className="btn btn-info btn-flat btn-sm mr-2"><i className="fas fa-edit"></i></button>
-                                            <button title="You may delete/remove the tag from here" type="button" className="btn btn-danger btn-sm btn-flat"><i className="fas fa-trash"></i></button>
-                                        </td>
+                                        {this.state.tags.map(tag =>
+                                        <tr key={tag.id}>
+                                            <td>{tag.name}</td>
+                                            <td>{tag.created_at}</td>
+                                            <td>{tag.updated_at}</td>
+                                            <td>
+                                                <button title="You may update the tag from here" type="button" className="btn btn-info btn-flat btn-sm mr-2"><i className="fas fa-edit"></i></button>
+                                                <button onClick={(e) => this.handleDelete(e, tag.id)} title="You may delete/remove the tag from here" type="button" className="btn btn-danger btn-sm btn-flat"><i className="fas fa-trash"></i></button>
+                                            </td>
                                         </tr>
+                                        )}
                                         </tbody>
                                     </table>
                                     </div>

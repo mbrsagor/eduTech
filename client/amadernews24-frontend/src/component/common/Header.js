@@ -20,7 +20,7 @@ export default class Header extends Component{
                     <li className="nav-item dropdown">
                         <Notifications />
                     </li>
-                    <li class="nav-item dropdown user-menu">
+                    <li className="nav-item dropdown user-menu">
                         <HeaderUser />
                     </li>
                 </ul>
