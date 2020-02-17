@@ -3,6 +3,7 @@ import Footer from '../../common/Footer'
 import AddTag from './modal/AddTag'
 import Sidebar from '../../common/Sidebar'
 import ArticleTagService from '../../services/ArticleTagService'
+import * as moment from 'moment'
 
 const articleTagService = new ArticleTagService()
 
@@ -86,8 +87,8 @@ class Tag extends Component {
                                         {this.state.tags.map(tag =>
                                         <tr key={tag.id}>
                                             <td>{tag.name}</td>
-                                            <td>{tag.created_at}</td>
-                                            <td>{tag.updated_at}</td>
+                                            <td>{moment(tag.created_at).format('DD/MM/YYYY h:mm a')}</td>
+                                            <td>{moment(tag.updated_at).format('DD/MM/YYYY h:mm a')}</td>
                                             <td>
                                                 <button title="You may update the tag from here" type="button" className="btn btn-info btn-flat btn-sm mr-2"><i className="fas fa-edit"></i></button>
                                                 <button onClick={(e) => this.handleDelete(e, tag.id)} title="You may delete/remove the tag from here" type="button" className="btn btn-danger btn-sm btn-flat"><i className="fas fa-trash"></i></button>
