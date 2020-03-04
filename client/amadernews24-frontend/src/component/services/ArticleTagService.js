@@ -5,8 +5,6 @@ const API_URL = 'http://localhost:8000';
 
 export default class ArticleTagService {
 
-    constructor(){}
-
     getArticleTag(){
         const url = `${API_URL}/api/article/tag/`;
         return axios.get(url).then(response=>response.data);
