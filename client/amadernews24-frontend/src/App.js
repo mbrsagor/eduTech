@@ -1,6 +1,6 @@
 import React, { Component} from 'react'
 import './App.css';
-import { Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 // All component
 import Category from './component/pages/category/Category'
@@ -15,18 +15,18 @@ import ForgotPassword from './component/pages/auth/ForgotPassword'
 export default class App extends Component{
   render(){
     return(
-      <React.Fragment>
+      <BrowserRouter>
         <Switch>
           <Route exact path="/" component={Dashboard} />
-          <Route exact path="/category" component={Category} />
-          <Route exact path="/tag" component={Tag} />
-          <Route exact path="/location" component={Location} />
-          <Route exact path="/add-new-article" component={Article} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/registration" component={Registeration} />
-          <Route exact path="/forgot-password" component={ForgotPassword} />
+          <Route path="/category" component={Category} />
+          <Route path="/tag" component={Tag} />
+          <Route path="/location" component={Location} />
+          <Route path="/add-new-article" component={Article} />
+          <Route path="/login" component={Login} />
+          <Route path="/registration" component={Registeration} />
+          <Route path="/forgot-password" component={ForgotPassword} />
         </Switch>
-      </React.Fragment>
+      </BrowserRouter>
     )
   }
 }
