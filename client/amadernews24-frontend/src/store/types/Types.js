@@ -1,6 +1,13 @@
 // Login
-export const LOGIN_ERROR = 'LOGIN_ERROR'
-export const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
+export const LOGIN_ERROR = 'LOGIN_ERROR';
+export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
+
+// Category
+export const FETCH_CATEGORY = 'FETCH_CATEGORY';
+export const CREATE_CATEGORY = 'CREATE_CATEGORY';
+export const UPDATE_CATEGORY = 'UPDATE_CATEGORY';
+export const FAIL_CATEGORY = 'FAIL_CATEGORY';
+export const DELETE_CATEGORY = 'DELETE_CATEGORY';
 
 // TAGS
 export const CREATE_TAG = 'CREATE_TAG';

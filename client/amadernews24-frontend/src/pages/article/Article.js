@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import Footer from '../../common/Footer'
-import Sidebar from '../../common/Sidebar'
+import Footer from '../../component/common/Footer'
+import Sidebar from '../../component/common/Sidebar'
 
 export default class Article extends Component {
     render(){

@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import Footer from '../../common/Footer'
 import AddTag from './modal/AddTag'
-import Sidebar from '../../common/Sidebar'
-import ArticleTagService from '../../services/ArticleTagService'
+import Footer from '../../component/common/Footer'
+import Sidebar from '../../component/common/Sidebar'
+import ArticleTagService from '../../component/services/ArticleTagService'
 import * as moment from 'moment'
 
 const articleTagService = new ArticleTagService()

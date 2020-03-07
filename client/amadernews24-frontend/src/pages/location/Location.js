@@ -1,9 +1,9 @@
 import React, {Component} from 'react'
-import Footer from '../../common/Footer'
-import AddCategory from './modal/AddCategory'
-import Sidebar from '../../common/Sidebar'
+import AddLocation from './modal/AddLocation'
+import Footer from '../../component/common/Footer'
+import Sidebar from '../../component/common/Sidebar'
 
-class Category extends Component {
+class Location extends Component {
     render(){
         return(
             <div>
@@ -14,12 +14,12 @@ class Category extends Component {
                         <div className="container-fluid">
                             <div className="row mb-2">
                                 <div className="col-sm-6">
-                                    <h1 className="m-0 text-dark">Category</h1>
+                                    <h1 className="m-0 text-dark">Location</h1>
                                 </div>
                                 <div className="col-sm-6">
                                     <ol className="breadcrumb float-sm-right">
                                         <li className="breadcrumb-item"><a href="/">Dashboard</a></li>
-                                        <li className="breadcrumb-item active">Category</li>
+                                        <li className="breadcrumb-item active">Location</li>
                                     </ol>
                                 </div>
                             </div>
@@ -35,19 +35,17 @@ class Category extends Component {
                             <div className="col-12">
                                 <div className="card">
                                     <div className="card-header text-right">
-                                        <h3 className="card-title">List of category and sub-category</h3>
+                                        <h3 className="card-title">List of locations</h3>
                                         <button type="button" className="btn btn-primary btn-sm" data-toggle="modal" data-target="#open-modal"><i className="fas fa-plus"></i> New</button>
                                     </div>
-                                    <AddCategory/>
+                                    <AddLocation/>
                                     <div className="card-body">
                                     <table className="table table-bordered table-hover">
                                         <thead>
                                         <tr>
-                                        <th>Category Name</th>
+                                        <th>Location Name</th>
                                         <th>Parent</th>
-                                        <th>Order</th>
-                                        <th>Active</th>
-                                        <th>Slide</th>
+                                        <th>Type</th>
                                         <th>Created Date</th>
                                         <th>Actions</th>
                                         </tr>
@@ -58,13 +56,11 @@ class Category extends Component {
                                         <td>Internet
                                             Explorer 4.0
                                         </td>
-                                        <td>Win 95+</td>
                                         <td>Deactive</td>
-                                        <td>YES</td>
                                         <td>02-FEB-2020, 12:00PM</td>
                                         <td>
-                                            <button title="You may update the category from here" type="button" className="btn btn-info btn-flat btn-sm mr-2"><i className="fas fa-edit"></i></button>
-                                            <button title="You may delete/remove the category from here" type="button" className="btn btn-danger btn-sm btn-flat"><i className="fas fa-trash"></i></button>
+                                            <button title="You may update the location from here" type="button" className="btn btn-info btn-flat btn-sm mr-2"><i className="fas fa-edit"></i></button>
+                                            <button title="You may delete/remove the location from here" type="button" className="btn btn-danger btn-sm btn-flat"><i className="fas fa-trash"></i></button>
                                         </td>
                                         </tr>
                                         </tbody>
@@ -82,4 +78,5 @@ class Category extends Component {
         )
     }
 }
-export default Category
+
+export default Location

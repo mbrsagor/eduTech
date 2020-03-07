@@ -3,8 +3,8 @@ import TotalCount from './TotalCount'
 import Calendar from './Calendar'
 import Chat from './Chat'
 import Visitors from './Visitors'
-import Footer from '../common/Footer'
-import Sidebar from '../common/Sidebar'
+import Footer from '../component/common/Footer'
+import Sidebar from '../component/common/Sidebar'
 
 export default class Dashboard extends Component {
     render(){

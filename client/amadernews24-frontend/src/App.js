@@ -3,14 +3,14 @@ import './App.css';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 // All component
-import Category from './component/pages/category/Category'
-import Tag from './component/pages/tag/Tag'
-import Article from './component/pages/article/Article'
-import Location from './component/pages/location/Location'
-import Dashboard from './component/dashboard/Dashboard'
-import Login from './component/pages/auth/Login'
-import Registeration from './component/pages/auth/Registeration'
-import ForgotPassword from './component/pages/auth/ForgotPassword'
+import Category from '../src/pages/category/Category'
+import Tag from '../src/pages/tag/Tag'
+import Article from '../src/pages/article/Article'
+import Location from '../src/pages/location/Location'
+import Dashboard from './dashboard/Dashboard'
+import Login from '../src/pages/auth/Login'
+import Registeration from '../src/pages/auth/Registeration'
+import ForgotPassword from '../src/pages/auth/ForgotPassword'
 
 export default class App extends Component{
   render(){
