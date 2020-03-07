@@ -3,9 +3,9 @@ import Footer from '../../common/Footer'
 import AddTag from './modal/AddTag'
 import Sidebar from '../../common/Sidebar'
 import ArticleTagService from '../../services/ArticleTagService'
+import { fetchTag } from '../../../store/actions/AllActions'
+import { connect } from "react-redux";
 import * as moment from 'moment'
-
-const articleTagService = new ArticleTagService()
 
 class Tag extends Component {
 
@@ -14,28 +14,6 @@ class Tag extends Component {
         this.state = {
             tags : [],
         };
-        
-        this.handleDelete  =  this.handleDelete.bind(this);
-    }
-
-    componentDidMount(){
-        var self = this;
-        articleTagService.getArticleTag().then(function(result){
-            console.log(result);
-            self.setState({tags:result})
-        });
-    }
-
-    handleDelete(e, id){
-        var  self  =  this;
-        articleTagService.deleteArticelTag({id : id}).then(() =>{
-            var _tag = self.state.tags.filter(function(obj){
-                return obj.id !== id;
-            });
-            self.setState({tags: _tag});
-        }).catch(()=>{
-            alert('There was an error! Please re-check your form.');
-        });
     }
 
     render(){
@@ -84,17 +62,15 @@ class Tag extends Component {
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        {this.state.tags.map(tag =>
-                                        <tr key={tag.id}>
-                                            <td>{tag.name}</td>
-                                            <td>{moment(tag.created_at).format('DD/MM/YYYY h:mm a')}</td>
-                                            <td>{moment(tag.updated_at).format('DD/MM/YYYY h:mm a')}</td>
+                                        <tr>
+                                            <td>dnfsdf</td>
+                                            <td>20 december 2020</td>
+                                            <td>20 december 2020</td>
                                             <td>
                                                 <button title="You may update the tag from here" type="button" className="btn btn-info btn-flat btn-sm mr-2"><i className="fas fa-edit"></i></button>
-                                                <button onClick={(e) => this.handleDelete(e, tag.id)} title="You may delete/remove the tag from here" type="button" className="btn btn-danger btn-sm btn-flat"><i className="fas fa-trash"></i></button>
+                                                <button title="You may delete/remove the tag from here" type="button" className="btn btn-danger btn-sm btn-flat"><i className="fas fa-trash"></i></button>
                                             </td>
                                         </tr>
-                                        )}
                                         </tbody>
                                     </table>
                                     </div>

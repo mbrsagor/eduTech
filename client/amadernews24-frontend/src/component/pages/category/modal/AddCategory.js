@@ -20,9 +20,9 @@ class AddCategory extends Component {
                             <div className="form-group">
                                 <input type="text" className="form-control" id="category" placeholder="Enter category name"/>
                             </div>
-                            <div class="form-group">
-                                <select class="form-control select2">
-                                    <option selected="selected">Select Parent</option>
+                            <div className="form-group">
+                                <select className="form-control select2">
+                                    <option>Select Parent</option>
                                     <option>Alaska</option>
                                     <option>California</option>
                                     <option>Delaware</option>
@@ -37,13 +37,13 @@ class AddCategory extends Component {
                             <div className="form-group">
                                 <div className="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
                                     <input type="checkbox" className="custom-control-input" id="showPost"/>
-                                    <label className="custom-control-label" for="showPost">Show as post </label>
+                                    <label className="custom-control-label" htmlFor="showPost">Show as post </label>
                                 </div>
                             </div>
                             <div className="form-group">
                                 <div className="custom-control custom-switch custom-switch-off-danger custom-switch-on-success">
                                     <input type="checkbox" className="custom-control-input" id="active"/>
-                                    <label className="custom-control-label" for="active">Active Category</label>
+                                    <label className="custom-control-label" htmlFor="active">Active Category</label>
                                 </div>
                             </div>
                         </div>

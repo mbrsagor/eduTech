@@ -1,53 +1,24 @@
-import React, {Component} from 'react'
-import ArticleTagService from '../../../services/ArticleTagService'
+import React, { Component } from 'react'
 
-const articleTagService = new ArticleTagService()
 
 class AddTag extends Component {
 
-    constructor(props){
-        super(props);
-        this.state = {
-            tags : []
-        }
-
-        this.handleSubmit = this.handleSubmit.bind(this);
+    state = {
+        name: ''
     }
 
-    handleCreate(){
-        articleTagService.createArticleTag({
-            "name" : this.refs.name.value}
-        ).then((result)=>{
-            console.log(result);
-            alert("Tag has been created.");
-        }).catch(()=>{
-            alert("There was an error! Please re-check your form.");
-        });
+    changeHandelar = event => {
+        this.setState({
+            [event.target.name] : event.target.value
+        })
     }
 
-    handleUpdate(id){
-        articleTagService.updateArticleTag({
-            "id": id,
-            "name": this.refs.name.value}          
-        ).then((result)=>{
-          console.log(result);
-          alert("Tag updated!");
-        }).catch(()=>{
-          alert('There was an error! Please re-check your form.');
-        });
-      }
+    handleSubmit = event => {
+        event.preventDefault()
+    }
 
-      handleSubmit(event) {
-        const { match: { params } } = this.props;
-
-        if(params && params.pk){
-          this.handleUpdate(params.pk);
-        }else{
-          this.handleCreate();
-        }event.preventDefault();
-      }
-
-    render(){
+    render() {
+        let { name } = this.state;
         return(
 
         <div className="modal fade" id="open-modal">
@@ -64,11 +35,12 @@ class AddTag extends Component {
                     <form onSubmit={this.handleSubmit}>
                         <div className="card-body">
                             <div className="form-group">
-                                <input type="text" ref="name" className="form-control" id="category" placeholder="Enter tag name"/>
+                                <label htmlFor="name">Enter Tag Name</label>
+                                <input type="text" className="form-control" id="name" name="name" value={name} onChange={this.changeHandelar} placeholder="Enter tag name" />
                             </div>
                         </div>
                     </form>
-                
+                 
                     </div>
                     <div className="modal-footer text-right">
                         <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
