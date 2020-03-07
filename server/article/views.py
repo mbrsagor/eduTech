@@ -11,11 +11,19 @@ from .serializers import (
 
 from users.permissions import PermissionHelperMixin
 from rest_framework.viewsets import ModelViewSet
+from rest_framework.pagination import PageNumberPagination
+
+
+class StandardResultsSetPagination(PageNumberPagination):
+    page_size = 5
+    page_size_query_param = 'page_size'
+    max_page_size = 8
 
 
 class CategoryViewSet(ModelViewSet, PermissionHelperMixin):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
+    pagination_class = StandardResultsSetPagination
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
@@ -38,6 +46,7 @@ class TagsViewSet(ModelViewSet, PermissionHelperMixin):
 class PostViewSet(ModelViewSet, PermissionHelperMixin):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
+    pagination_class = StandardResultsSetPagination
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
@@ -52,6 +61,7 @@ class PostViewSet(ModelViewSet, PermissionHelperMixin):
 class LocationViewSet(ModelViewSet, PermissionHelperMixin):
     queryset = Location.objects.all()
     serializer_class = LocationSerializer
+    pagination_class = StandardResultsSetPagination
 
     def get_permissions(self):
         return self.admin_editable_only()
@@ -60,6 +70,7 @@ class LocationViewSet(ModelViewSet, PermissionHelperMixin):
 class CommentViewSet(ModelViewSet, PermissionHelperMixin):
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
+    pagination_class = StandardResultsSetPagination
 
     def perform_create(self, serializer):
         serializer.save(commend_by=self.request.user)
