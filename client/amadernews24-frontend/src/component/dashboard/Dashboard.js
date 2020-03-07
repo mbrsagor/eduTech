@@ -9,7 +9,7 @@ import Sidebar from '../common/Sidebar'
 export default class Dashboard extends Component {
     render(){
         return(
-            <>  
+            <div>  
                 <Sidebar />
                 <div className="content-wrapper">
                     {/* Page title start */}
@@ -48,7 +48,7 @@ export default class Dashboard extends Component {
                     {/* Main-content end */}
                 </div>
                 <Footer />
-            </>
+            </div>
         )
     }
 }

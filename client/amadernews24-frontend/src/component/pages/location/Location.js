@@ -6,7 +6,7 @@ import Sidebar from '../../common/Sidebar'
 class Location extends Component {
     render(){
         return(
-            <>
+            <div>
                 <Sidebar />
                 <div className="content-wrapper">
                     {/* Page title start */}
@@ -74,7 +74,7 @@ class Location extends Component {
                     {/* Main-content end */}
                 </div>
                 <Footer />
-            </>
+            </div>
         )
     }
 }

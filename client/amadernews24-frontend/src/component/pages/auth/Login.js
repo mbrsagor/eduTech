@@ -1,9 +1,30 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 class Login extends Component {
-    render(){
+
+    state = {
+        username: '',
+        password: ''
+    }
+
+    changeHandler = event => {
+        this.setState({
+            
+        })
+    }
+
+    onSubmitHanddler = event => {
+        event.preventDefault()
+        this.props.login({
+            email: this.state.email,
+            password: this.state.password
+        }, this.props.history)
+    }
+
+    render() {
+        let { username, password } = this.state;
         return(
-            <body className="hold-transition login-page">
+            <div className="hold-transition login-page">
                 <div className="login-box">
                     <div className="login-logo">
                         <a href="/"><b>Amader news</b>24</a>
@@ -12,9 +33,16 @@ class Login extends Component {
                         <div className="card-body login-card-body">
                         <p className="login-box-msg">Sign In</p>
 
-                        <form action="/" method="post">
+                        <form onSubmit={this.onSubmitHanddler}>
                             <div className="input-group mb-3">
-                            <input type="email" className="form-control" placeholder="Email"/>
+                                <input
+                                    type="email"
+                                    name="email"
+                                    value={username}
+                                    onChange={this.changeHandler}
+                                    className="form-control"
+                                    placeholder="Email"
+                                />
                             <div className="input-group-append">
                                 <div className="input-group-text">
                                 <span className="fas fa-envelope"></span>
@@ -22,7 +50,14 @@ class Login extends Component {
                             </div>
                             </div>
                             <div className="input-group mb-3">
-                            <input type="password" className="form-control" placeholder="Password"/>
+                                <input
+                                    type="password"
+                                    name="password"
+                                    value={password}
+                                    onChange={this.changeHandler}
+                                    className="form-control"
+                                    placeholder="******"
+                                />
                             <div className="input-group-append">
                                 <div className="input-group-text">
                                 <span className="fas fa-lock"></span>
@@ -33,13 +68,13 @@ class Login extends Component {
                                 <div className="col-8">
                                     <div className="icheck-primary">
                                     <input type="checkbox" id="remember"/>
-                                    <label for="remember">
+                                        <label htmlFor="remember">
                                         Remember Me
                                     </label>
                                     </div>
                                 </div>
                                 <div className="col-4">
-                                    <button type="submit" class="btn btn-primary btn-block btn-sm">Sign In</button>
+                                    <button type="submit" className="btn btn-primary btn-block btn-sm">Sign In</button>
                                 </div>
                             </div>
                         </form>
@@ -50,7 +85,7 @@ class Login extends Component {
                         </div>
                     </div>
                 </div>
-            </body>
+            </div>
         )
     }
 }

@@ -5,7 +5,7 @@ import Sidebar from '../../common/Sidebar'
 export default class Article extends Component {
     render(){
         return(
-            <>
+            <div>
                 <Sidebar />
                 <div className="content-wrapper">
                     {/* Page title start */}
@@ -140,7 +140,7 @@ export default class Article extends Component {
                     {/* Main-content end */}
                 </div>
                 <Footer />
-            </>
+            </div>
         )
     }
 }

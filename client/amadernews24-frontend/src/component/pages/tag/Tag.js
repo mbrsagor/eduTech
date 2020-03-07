@@ -40,7 +40,7 @@ class Tag extends Component {
 
     render(){
         return(
-            <>
+            <div>
               <Sidebar />
               <div className="content-wrapper">
                     {/* Page title start */}
@@ -106,7 +106,7 @@ class Tag extends Component {
                     {/* Main-content end */}
                 </div>
                 <Footer />
-            </>
+            </div>
         )
     }
 }

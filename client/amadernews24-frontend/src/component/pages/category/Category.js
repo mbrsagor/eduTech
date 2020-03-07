@@ -6,7 +6,7 @@ import Sidebar from '../../common/Sidebar'
 class Category extends Component {
     render(){
         return(
-            <>
+            <div>
                 <Sidebar />
                 <div className="content-wrapper">
                     {/* Page title start */}
@@ -78,7 +78,7 @@ class Category extends Component {
                     {/* Main-content end */}
                 </div>
                 <Footer />
-            </>
+            </div>
         )
     }
 }
