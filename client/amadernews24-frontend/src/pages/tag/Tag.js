@@ -14,7 +14,7 @@ class Tag extends Component {
 
     render() {
         let { tags } = this.props
-        console.log(tags.results)
+        // console.log(tags.results)
         return(
             <div>
               <Sidebar />

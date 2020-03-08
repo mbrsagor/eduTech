@@ -2,9 +2,19 @@ import React, {Component} from 'react'
 import AddLocation from './modal/AddLocation'
 import Footer from '../../component/common/Footer'
 import Sidebar from '../../component/common/Sidebar'
+import { fetchLocation } from '../../store/actions/LocationAction'
+import * as moment from 'moment'
+import { connect } from 'react-redux'
 
 class Location extends Component {
+
+    componentDidMount() {
+        this.props.fetchLocation()
+    }
+
     render(){
+        let { locations } = this.props
+        console.log(locations)
         return(
             <div>
                 <Sidebar />
@@ -79,4 +89,8 @@ class Location extends Component {
     }
 }
 
-export default Location
+const mapStateToProps = state  => ({
+    locations: state.locations
+})
+
+export default connect(mapStateToProps, {fetchLocation}) (Location)

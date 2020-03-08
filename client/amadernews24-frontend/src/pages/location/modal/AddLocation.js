@@ -20,9 +20,9 @@ class AddLocation extends Component {
                             <div className="form-group">
                                 <input type="text" className="form-control" id="category" placeholder="Enter category name"/>
                             </div>
-                            <div class="form-group">
-                                <select class="form-control select2">
-                                    <option selected="selected">Select Parent</option>
+                            <div className="form-group">
+                                <select className="form-control select2">
+                                    <option>Select Parent</option>
                                     <option>Alaska</option>
                                     <option>California</option>
                                     <option>Delaware</option>
@@ -31,9 +31,9 @@ class AddLocation extends Component {
                                     <option>Washington</option>
                                 </select>
                             </div>
-                            <div class="form-group">
-                                <select class="form-control select2">
-                                    <option selected="selected">Select Parent</option>
+                            <div className="form-group">
+                                <select className="form-control select2">
+                                    <option>Select Parent</option>
                                     <option>Alaska</option>
                                     <option>California</option>
                                     <option>Delaware</option>

@@ -15,3 +15,9 @@ export const FETCH_TAG = 'FETCH_TAG';
 export const TAG_PENDING = 'TAG_PENDING';
 export const TAG_CREATE_SUCCESS = 'TAG_CREATE_SUCCESS';
 export const TAG_CREATE_FAIL = 'TAG_CREATE_FAIL';
+
+// Location
+export const CREATE_LOCATION = 'CREATE_LOCATION';
+export const FETCH_LOCATION = 'FETCH_LOCATION';
+export const UPDATE_LOCATION = 'UPDATE_LOCATION';
+export const DELETE_LOCATION = 'DELETE_LOCATION';
