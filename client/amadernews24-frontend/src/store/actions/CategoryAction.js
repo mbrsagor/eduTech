@@ -16,4 +16,3 @@ export const categoryFetchAction = () => dispatch => {
             console.log(error);
         })
 }
- 

@@ -14,7 +14,7 @@ class Category extends Component {
 
     render() {
         let { categorys } = this.props
-        console.log(categorys.results)
+        // console.log(categorys.results)
         return (
             <div>
                 <Sidebar />
@@ -54,7 +54,6 @@ class Category extends Component {
                                                 <thead>
                                                     <tr>
                                                         <th>Category Name</th>
-                                                        <th>Parent</th>
                                                         <th>Order</th>
                                                         <th>Active</th>
                                                         <th>Slide</th>
@@ -65,10 +64,9 @@ class Category extends Component {
                                                 <tbody>
                                                     {categorys.results && categorys.results.map((category, index) => {
                                                         return (
-                                                            <tr>
-                                                                <td>{category.name}</td>
-                                                                <td>{category.parent}</td>
-                                                                <td>{category.order}</td>
+                                                            <tr key={index}>
+                                                                <td>{category.name && category.name}</td>
+                                                                <td>{category.order && category.order}</td>
                                                                 <td>{category.is_active && category.is_active ? 'Activated': 'De-Activated'}</td>
                                                                 <td>{category.show_as_category && category.show_as_category ? 'Yes': 'No'}</td>
                                                                 <td>{moment(category.created_at).format('DD/MM/YYYY h:mm a')}</td>
