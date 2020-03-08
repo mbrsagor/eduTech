@@ -2,43 +2,19 @@ import React, { Component } from 'react'
 import AddTag from './modal/AddTag'
 import Footer from '../../component/common/Footer'
 import Sidebar from '../../component/common/Sidebar'
-import ArticleTagService from '../../component/services/ArticleTagService'
+import { fetchTagAction} from '../../store/actions/TagAction'
 import * as moment from 'moment'
-
-const articleTagService = new ArticleTagService()
+import { connect } from 'react-redux'
 
 class Tag extends Component {
 
-    constructor(props){
-        super(props);
-        this.state = {
-            tags : [],
-        };
-        
-        this.handleDelete  =  this.handleDelete.bind(this);
+    componentDidMount() {
+        this.props.fetchTagAction()
     }
 
-    componentDidMount(){
-        var self = this;
-        articleTagService.getArticleTag().then(function(result){
-            console.log(result);
-            self.setState({tags:result})
-        });
-    }
-
-    handleDelete(e, id){
-        var  self  =  this;
-        articleTagService.deleteArticelTag({id : id}).then(() =>{
-            var _tag = self.state.tags.filter(function(obj){
-                return obj.id !== id;
-            });
-            self.setState({tags: _tag});
-        }).catch(()=>{
-            alert('There was an error! Please re-check your form.');
-        });
-    }
-
-    render(){
+    render() {
+        let { tags } = this.props
+        console.log(tags.results)
         return(
             <div>
               <Sidebar />
@@ -84,17 +60,21 @@ class Tag extends Component {
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        {this.state.tags.map(tag =>
-                                        <tr key={tag.id}>
-                                            <td>{tag.name}</td>
-                                            <td>{moment(tag.created_at).format('DD/MM/YYYY h:mm a')}</td>
-                                            <td>{moment(tag.updated_at).format('DD/MM/YYYY h:mm a')}</td>
-                                            <td>
-                                                <button title="You may update the tag from here" type="button" className="btn btn-info btn-flat btn-sm mr-2"><i className="fas fa-edit"></i></button>
-                                                <button onClick={(e) => this.handleDelete(e, tag.id)} title="You may delete/remove the tag from here" type="button" className="btn btn-danger btn-sm btn-flat"><i className="fas fa-trash"></i></button>
-                                            </td>
-                                        </tr>
-                                        )}
+                                        {
+                                            tags.results && tags.results.map((tag, index) => {
+                                                return (
+                                                    <tr key={index}>
+                                                    <td>{tag.name}</td>
+                                                    <td>{moment(tag.created_at).format('DD/MM/YYYY h:mm a')}</td>
+                                                    <td>{moment(tag.updated_at).format('DD/MM/YYYY h:mm a')}</td>
+                                                    <td>
+                                                        <button title="You may update the tag from here" type="button" className="btn btn-info btn-flat btn-sm mr-2"><i className="fas fa-edit"></i></button>
+                                                        <button onClick={(e) => this.handleDelete(e, tag.id)} title="You may delete/remove the tag from here" type="button" className="btn btn-danger btn-sm btn-flat"><i className="fas fa-trash"></i></button>
+                                                    </td>
+                                                </tr>
+                                                )
+                                            })
+                                        }
                                         </tbody>
                                     </table>
                                     </div>
@@ -110,4 +90,9 @@ class Tag extends Component {
         )
     }
 }
-export default Tag
+
+const mapStateToProps = state => ({
+    tags: state.tags
+})
+
+export default connect(mapStateToProps, {fetchTagAction}) (Tag)

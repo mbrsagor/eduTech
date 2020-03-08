@@ -38,6 +38,7 @@ class CategoryViewSet(ModelViewSet, PermissionHelperMixin):
 class TagsViewSet(ModelViewSet, PermissionHelperMixin):
     queryset = Tags.objects.all()
     serializer_class = TagsSerializer
+    pagination_class = StandardResultsSetPagination
 
     def get_permissions(self):
         return self.authenticated_user_editable_only()
