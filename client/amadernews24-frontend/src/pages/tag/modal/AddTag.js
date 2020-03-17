@@ -1,24 +1,8 @@
 import React, { Component } from 'react'
-// import { CreateTag } from '../../.././../store/actions/AllActions'
 
 class AddTag extends Component {
 
-    state = {
-        name: ''
-    }
-
-    changeHandelar = event => {
-        this.setState({
-            [event.target.name] : event.target.value
-        })
-    }
-
-    handleSubmit = event => {
-        event.preventDefault()
-    }
-
     render() {
-        let { name } = this.state;
         return(
 
         <div className="modal fade" id="open-modal">
@@ -30,22 +14,20 @@ class AddTag extends Component {
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div className="modal-body">
-                        
-                    <form onSubmit={this.handleSubmit}>
-                        <div className="card-body">
-                            <div className="form-group">
-                                <label htmlFor="name">Enter Tag Name</label>
-                                <input type="text" className="form-control" id="name" name="name" value={name} onChange={this.changeHandelar} placeholder="Enter tag name" />
+                    <form>
+                        <div className="modal-body"> 
+                            <div className="card-body">
+                                <div className="form-group">
+                                    <label htmlFor="name">Enter Tag Name</label>
+                                    <input type="text" className="form-control" id="name" name="name" placeholder="Enter tag name" />
+                                </div>
                             </div>
                         </div>
+                        <div className="modal-footer text-right">
+                            <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="submit" className="btn btn-success">Save</button>
+                        </div>
                     </form>
-                 
-                    </div>
-                    <div className="modal-footer text-right">
-                        <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="submit" className="btn btn-success">Save</button>
-                    </div>
                 </div>
             </div>
         </div>

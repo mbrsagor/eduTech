@@ -1,4 +1,4 @@
-from django.db import models 
+from django.db import models
 from django.conf import settings
 
 STATUS_CHOICE = (
@@ -26,6 +26,7 @@ CHOICE_MENUS = [
     (5, 'Other-Menu'),
 ]
 
+
 class Category(models.Model):
     name = models.CharField(max_length=20, unique=True)
     parent = models.ForeignKey('self', on_delete=models.CASCADE, blank=True, null=True, default=None)
@@ -47,7 +48,7 @@ class Category(models.Model):
 
     def children_count(self):
         return Category.objects.filter(parent=self).count()
-    
+
 
 class Tags(models.Model):
     name = models.CharField(max_length=20, unique=True)
@@ -71,7 +72,7 @@ class Location(models.Model):
     @staticmethod
     def get_country_queryset():
         return Location.objects.filter(location_type=1)
-    
+
     @staticmethod
     def get_city_queryset():
         return Location.objects.filter(location_type=2)
@@ -87,7 +88,7 @@ class Location(models.Model):
     @staticmethod
     def get_postcode_queryset():
         return Location.objects.filter(location_type=5)
-    
+
     @staticmethod
     def get_division_queryset():
         return Location.objects.filter(location_type=7)
@@ -109,7 +110,7 @@ class Post(models.Model):
 
     class Meta:
         ordering = ['-updated_on']
-    
+
     def __str__(self):
         return self.title
 
@@ -117,18 +118,19 @@ class Post(models.Model):
 class Comment(models.Model):
     comment_post = models.ForeignKey(Post, on_delete=models.CASCADE, related_query_name='post_comment')
     comments = models.TextField()
-    commend_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_query_name='comment_user')
+    commend_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,
+                                   related_query_name='comment_user')
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         ordering = ['-created_at']
-    
+
     def __str__(self):
         return self.comments
 
 
 class Menu(models.Model):
-    name = models.CharField(max_length= 70, unique=True)
+    name = models.CharField(max_length=70, unique=True)
     menu_type = models.IntegerField(choices=CHOICE_MENUS)
     parent = models.ForeignKey('self', on_delete=models.CASCADE, blank=True, null=True, default=None)
     url = models.URLField()
@@ -143,15 +145,15 @@ class Menu(models.Model):
     @property
     def get_topMenu_queryset():
         return Menu.objects.filter(menu_type=1)
-    
+
     @property
     def get_mainMenu_queryset():
         return Menu.objects.filter(menu_type=2)
-    
+
     @property
     def get_widgetMenu_queryset():
         return Menu.objects.filter(menu_type=3)
-    
+
     @property
     def get_footerMenu_queryset():
         return Menu.objects.filter(menu_type=4)
