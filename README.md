@@ -22,7 +22,7 @@ $ brew install gdal
 $ brew install libgeoip
 ```
 
-On Debian Linux
+On Debian/Ubuntu Linux
 ```
 $ sudo apt-get install binutils libproj-dev gdal-bin
 $ sudo apt-get install mysql-<mysql-version>-mysql-<mysql-version> # example Mysql 8.0.19
