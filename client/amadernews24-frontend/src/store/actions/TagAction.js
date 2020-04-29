@@ -26,6 +26,7 @@ export const createTagAction = (name) => dispatch => {
                 type: Types.CREATE_TAG,
                 data:response.data
             })
+            console.log(response)
         })
         .catch(error => {
             throw(error)
