@@ -36,7 +36,7 @@ class CategoryViewSet(ModelViewSet, PermissionHelperMixin):
 
 
 class TagsViewSet(ModelViewSet, PermissionHelperMixin):
-    queryset = Tags.objects.all()
+    queryset = Tags.objects.all().order_by('-id')
     serializer_class = TagsSerializer
     pagination_class = StandardResultsSetPagination
 
@@ -45,7 +45,7 @@ class TagsViewSet(ModelViewSet, PermissionHelperMixin):
 
 
 class PostViewSet(ModelViewSet, PermissionHelperMixin):
-    queryset = Post.objects.all()
+    queryset = Post.objects.all().order_by('-id')
     serializer_class = PostSerializer
     pagination_class = StandardResultsSetPagination
 
@@ -60,7 +60,7 @@ class PostViewSet(ModelViewSet, PermissionHelperMixin):
 
 
 class LocationViewSet(ModelViewSet, PermissionHelperMixin):
-    queryset = Location.objects.all()
+    queryset = Location.objects.all().order_by('-id')
     serializer_class = LocationSerializer
     pagination_class = StandardResultsSetPagination
 
@@ -69,7 +69,7 @@ class LocationViewSet(ModelViewSet, PermissionHelperMixin):
 
 
 class CommentViewSet(ModelViewSet, PermissionHelperMixin):
-    queryset = Comment.objects.all()
+    queryset = Comment.objects.all().order_by('-id')
     serializer_class = CommentSerializer
     pagination_class = StandardResultsSetPagination
 
@@ -84,7 +84,7 @@ class CommentViewSet(ModelViewSet, PermissionHelperMixin):
 
 
 class MenuViewSet(ModelViewSet, PermissionHelperMixin):
-    queryset = Menu.objects.all()
+    queryset = Menu.objects.all().order_by('-id')
     serializer_class = MenuSerializer
 
     def get_permissions(self):

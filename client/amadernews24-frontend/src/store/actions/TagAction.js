@@ -23,6 +23,7 @@ export const createTagAction = (name) => dispatch => {
     Axios.post(`${API_URL}/api/article/tag/`, {name})
         .then(response => {
             dispatch({
+                type: Types.CREATE_TAG,
                 data:response.data
             })
         })

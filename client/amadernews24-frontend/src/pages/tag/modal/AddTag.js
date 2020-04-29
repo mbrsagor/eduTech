@@ -17,7 +17,10 @@ class AddTag extends Component {
     handleSubmit = event => {
         event.preventDefault();
         if (this.state.name) {
-            this.props.setState(this.name)
+            this.setState({
+                name: this.state.name
+            })
+            console.log(this.state.name)
         }
     };
 
@@ -55,8 +58,8 @@ class AddTag extends Component {
         )
     }
 }
+const mapStateToProps = state => ({
+    data: state.name
+})
 
-const mapDispatchToProps = ({
-
-});
-export default (AddTag)
+export default connect(mapStateToProps, { createTagAction })(AddTag)
