@@ -141,23 +141,3 @@ class Menu(models.Model):
 
     def __str__(self):
         return self.name
-
-    @property
-    def get_topMenu_queryset():
-        return Menu.objects.filter(menu_type=1)
-
-    @property
-    def get_mainMenu_queryset():
-        return Menu.objects.filter(menu_type=2)
-
-    @property
-    def get_widgetMenu_queryset():
-        return Menu.objects.filter(menu_type=3)
-
-    @property
-    def get_footerMenu_queryset():
-        return Menu.objects.filter(menu_type=4)
-
-    @property
-    def get_otherMenu_queryset():
-        return Menu.objects.filter(menu_type=5)
