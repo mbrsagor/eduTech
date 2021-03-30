@@ -1,6 +1,9 @@
 import React, { Component } from "react"
 
 export default class TotalCount extends Component {
+
+    // componentDidMount() {}
+
     render(){
         return(
             <div className="row">

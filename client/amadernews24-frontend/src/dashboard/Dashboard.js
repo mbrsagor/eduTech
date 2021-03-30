@@ -1,18 +1,21 @@
 import React, { Component } from 'react'
-import TotalCount from './TotalCount'
-import Calendar from './Calendar'
-import Chat from './Chat'
-import Visitors from './Visitors'
 import Footer from '../component/common/Footer'
 import Sidebar from '../component/common/Sidebar'
+import Calendar from './Calendar'
+import Chat from './Chat'
+import TotalCount from './TotalCount'
+import Visitors from './Visitors'
 
 export default class Dashboard extends Component {
+
+    // componentDidMount(){}
+    
     render(){
         return(
             <div>  
                 <Sidebar />
                 <div className="content-wrapper">
-                    {/* Page title start */}
+                    
                     <div className="content-header">
                         <div className="container-fluid">
                             <div className="row mb-2">
@@ -28,9 +31,7 @@ export default class Dashboard extends Component {
                             </div>
                         </div>
                     </div>
-                     {/* Page title end */}
-
-                    {/* Main-content start */}
+                     
                     <section className="content">
                         <div className="container-fluid">
                             <TotalCount/>
@@ -45,7 +46,7 @@ export default class Dashboard extends Component {
                             </div>
                         </div>
                     </section>
-                    {/* Main-content end */}
+                    
                 </div>
                 <Footer />
             </div>

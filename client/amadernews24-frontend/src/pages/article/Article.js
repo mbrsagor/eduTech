@@ -8,7 +8,7 @@ export default class Article extends Component {
             <div>
                 <Sidebar />
                 <div className="content-wrapper">
-                    {/* Page title start */}
+                    
                     <div className="content-header">
                         <div className="container-fluid">
                             <div className="row mb-2">
@@ -24,9 +24,7 @@ export default class Article extends Component {
                             </div>
                         </div>
                     </div>
-                     {/* Page title end */}
-
-                    {/* Main-content start */}
+                     
                     <section className="content">
                         <div className="container-fluid"> 
                             <div className="row">
@@ -137,7 +135,7 @@ export default class Article extends Component {
                             </div>
                         </div>
                     </section>
-                    {/* Main-content end */}
+                   
                 </div>
                 <Footer />
             </div>
