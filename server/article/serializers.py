@@ -1,11 +1,9 @@
-from .models import (
-    Category, Tags, Post, 
-    Location, Comment, Menu
-)
-
 from rest_framework import serializers
 
+from .models import Category, Comment, Location, Menu, Post, Tags
 
+
+# Post Category serializer
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
