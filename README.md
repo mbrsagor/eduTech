@@ -38,6 +38,20 @@ mysql -u root -p1234
 create database "newspaper";
 ```
 
+```python
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'newspaper',
+        'USER': 'root',
+        'PASSWORD': '12345678',
+        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
+        'PORT': '3306',
+    }
+}
+```
+
+
 ### Setup Django Server (Mac)
 install [Homebrew](http://brew.sh), then…
 
