@@ -7,4 +7,5 @@ media
 __pycache__/
 db.sqlite3
 .dbdata
+migrations
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.

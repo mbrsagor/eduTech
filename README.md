@@ -5,7 +5,7 @@
 
 ### Dependencies
 
-- Python 3.6.9 
+- Python 3.8.5 
 - Mysql 8.0.19
 - Docker
 
