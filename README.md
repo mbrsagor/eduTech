@@ -1,13 +1,13 @@
-# Online news potal and news management system app
+# Product Manager
+> Micro services type project.
 
 ## Setup
 
-### Dependancies
+### Dependencies
 
-- Python 3.6.9 / Django 3.0
+- Python 3.6.9 
 - Mysql 8.0.19
-- NodeJS v13.12.0
-- Install React.JS
+- Docker
 
 The following steps will walk you thru installation on a Mac. Linux should be similar.
 It's also possible to develop on a Windows machine, but I have not documented the steps.
@@ -58,13 +58,8 @@ install [Homebrew](http://brew.sh), then…
 ```
 brew install python3
 ```
-Assuming you've cloned the repository, open Terminal and `cd ~/your/path/to/newspaper`.
+Assuming you've cloned the repository, open Terminal and `cd ~/your/path/to/productManager`.
 
-Create a python virtual environment:
-
-```bash/zsh
-pyvenv-3.6.9 env
-```
 
 Activate it:
 
@@ -79,15 +74,4 @@ pip install -r requirements.txt
 
 python3 manage.py runserver # or
 ./manage.py runserver
-```
-
-
-### Build frontend and run locally
-First you will install react.JS in your local machine. Here I don't write how to install react.JS global.
-You may search google or visit to `https:///www.reactjs.org` website. 
-Already documenation lenght is very big.  
-```
-cd client/amadernews24
-npm install
-npm start
 ```
