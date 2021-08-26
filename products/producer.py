@@ -1,5 +1,4 @@
-import pika
-import sys
+import pika, json
 
 params = pika.URLParameters('amqps://fkggdzym:wUFW9Knc3MJ5sb8tqRs2K4a_RypB0u5E@cattle.rmq2.cloudamqp.com/fkggdzym')
 connection = pika.BlockingConnection(params)
@@ -7,6 +6,6 @@ connection = pika.BlockingConnection(params)
 channel = connection.channel()
 
 
-def publish():
-    message = ' '.join(sys.argv[1:]) or "Hello World!"
-    channel.basic_publish(exchange='', routing_key='admin', body="Hello there")
+def publish(method, body):
+    properties = pika.BasicProperties(method)
+    channel.basic_publish(exchange='', routing_key='main', body=json.dumps(body), properties=properties)
