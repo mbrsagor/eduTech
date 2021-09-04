@@ -50,7 +50,13 @@ class UserAPIView(views.APIView):
 
 class ManageListingView(views.APIView):
     def get(self, request):
-        pass
+        try:
+            pass
+        except:
+            return Response(
+                {'error': 'Something went to wrong when listing show'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
 
     def post(self, request):
         try:
@@ -64,10 +70,15 @@ class ManageListingView(views.APIView):
             realtor = data['realtor']
             title = data['title']
             slug = data['slug']
+            if Listing.objects.filter(slug=slug).exists():
+                return Response(
+                    {'error': 'The slug already exists'},
+                    status=status.HTTP_400_BAD_REQUEST
+                )
             address = data['address']
             city = data['city']
             state = data['state']
-            zip = data['zip']
+            zipcode = data['zipcode']
             description = data['description']
             price = data['price']
             try:
@@ -93,17 +104,59 @@ class ManageListingView(views.APIView):
                     {'error': 'bathroom must be float'},
                     status=status.HTTP_400_BAD_REQUEST
                 )
-            if bedrooms <= 0 or bathroom >= 0:
+            if bedrooms <= 0 or bedrooms >= 0:
                 bedrooms = 1.0
+            bedrooms = round(bathroom, 1)
 
             sale_type = data['sale_type']
+            if sale_type == 'FOR_RENT':
+                sale_type = 'For Rent'
+            else:
+                sale_type = 'For Sale'
+
             home_type = data['home_type']
+            if home_type == 'HOUSE':
+                home_type = 'House'
+            elif home_type == 'CONDO':
+                home_type = 'Condo'
+            else:
+                home_type = 'Townhouse'
             photo = data['photo']
             gallery = data['gallery']
             is_publish = data['is_publish']
+            if is_publish == 'True':
+                is_publish = True
+            else:
+                is_publish = False
             is_available = data['is_available']
+            if is_available == 'True':
+                is_available = True
+            else:
+                is_publish = False
             created_date = data['created_date']
 
+            Listing.objects.create(
+                realtor=realtor,
+                title=title,
+                address=address,
+                city=city,
+                state=state,
+                zipcode=zipcode,
+                description=description,
+                photo=photo,
+                gallery=gallery,
+                created_date=created_date,
+                is_publish=is_publish,
+                is_available=is_available,
+                home_type=home_type,
+                sale_type=sale_type,
+                bedrooms=bedrooms,
+                bathroom=bathroom
+            )
+            return Response(
+                {'success': 'Listing created successfully.'},
+                status=status.HTTP_201_CREATED
+            )
         except:
             return Response(
                 {'error': 'something went to wrong when creating listing'},
