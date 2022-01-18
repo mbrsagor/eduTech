@@ -35,22 +35,8 @@ First after installation mysql you may the command: example
 mysql -u root -p1234
 
 ```
-create database "newspaper";
+create database "product";
 ```
-
-```python
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'db_name',
-        'USER': 'db_user',
-        'PASSWORD': 'db_password',
-        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
-        'PORT': '3306',
-    }
-}
-```
-
 
 ### Setup Django Server (Mac)
 install [Homebrew](http://brew.sh), then…
@@ -60,18 +46,19 @@ brew install python3
 ```
 Assuming you've cloned the repository, open Terminal and `cd ~/your/path/to/productManager`.
 
+###### Then create ``.env`` file and paste code from `example.env` file and add validate information.
 
-Activate it:
+-------------------------------------------
+```bash
+|--> example.env
+|--> .env
+```
+
+###### Activate virtual environment & run development server:
 
 ```bash/zsh
-source env/bin/activate
-```
-
-Install the python dependancies which includes django and other libraries.
-
-```
+virtualenv venv --python=python3.8
+source venv/bin/activate
 pip install -r requirements.txt
-
-python3 manage.py runserver # or
 ./manage.py runserver
 ```
