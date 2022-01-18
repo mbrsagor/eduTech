@@ -16,6 +16,26 @@ class User(models.Model):
     pass
 
 
+class Location(models.Model):
+    name = models.CharField(max_length=150)
+    parent = models.ForeignKey('self', on_delete=models.CASCADE, related_name='location', blank=True, null=True)
+    image = models.ImageField(upload_to='location/%y/%m', null=True, blank=True)
+    is_active = models.BooleanField(default=True)
+    created_date = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-id']
+
+    def __str__(self):
+        return self.name[:30]
+
+    def get_children(self):
+        return Location.objects.filter(parent=self)
+
+    def children_count(self):
+        return Location.objects.filter(parent=self).count()
+
+
 class Listing(models.Model):
     class SaleType(models.TextChoices):
         FOR_SALE = 'For Sale'

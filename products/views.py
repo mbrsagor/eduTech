@@ -3,10 +3,14 @@ import random
 from rest_framework import viewsets, views, status
 from rest_framework.response import Response
 
-from .models import Product, User, Listing
+from .models import Product, User, Listing, Location
 from .producer import publish
-from .serializers import ProductSerializer
+from .serializers import ProductSerializer, LocationSerializer
 
+
+class LocationViewSet(views.ModelViewSet):
+    serialize_class = LocationSerializer
+    queyset = Location.objects.all()
 
 class ProductViewSet(viewsets.ViewSet):
     def list(self, request):
