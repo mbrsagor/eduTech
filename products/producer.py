@@ -1,6 +1,9 @@
-import pika, json
+import pika
+import json
 
-params = pika.URLParameters('amqps://fkggdzym:wUFW9Knc3MJ5sb8tqRs2K4a_RypB0u5E@cattle.rmq2.cloudamqp.com/fkggdzym')
+from productManager.settings import pika_url
+
+params = pika.URLParameters(pika_url)
 connection = pika.BlockingConnection(params)
 
 channel = connection.channel()
