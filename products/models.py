@@ -12,10 +12,6 @@ class Product(models.Model):
         return self.title[:30]
 
 
-class User(models.Model):
-    pass
-
-
 class Location(models.Model):
     name = models.CharField(max_length=150)
     parent = models.ForeignKey('self', on_delete=models.CASCADE, related_name='location', blank=True, null=True)

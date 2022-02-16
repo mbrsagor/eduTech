@@ -1,22 +1,23 @@
 import random
-
+from django.contrib.auth.models import User
 from rest_framework import viewsets, views, status
 from rest_framework.response import Response
 
-from .models import Product, User, Listing, Location
+from .models import Product, Listing, Location
 from .producer import publish
 from .serializers import ProductSerializer, LocationSerializer
 
 
-class LocationViewSet(views.ModelViewSet):
+class LocationViewSet(viewsets.ModelViewSet):
     serialize_class = LocationSerializer
-    queyset = Location.objects.all()
+    queryset = Location.objects.all()
+
 
 class ProductViewSet(viewsets.ViewSet):
     def list(self, request):
         products = Product.objects.all()
         serializer = ProductSerializer(products, many=True)
-        publish()
+        publish('hello', 'world')
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     def create(self, request):
