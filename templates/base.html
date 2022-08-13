@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<!-- Adding scripts here. The order matters: angular.js first, then its dependancies, e.g. ui-bootstrap -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<body>
+
+  <div>
+
+    <!-- main body -->
+    <div>
+      <hello-world name="World"> </hello-world>
+    </div>
+
+  </div>
+
+  <!-- ng-template simulates a separate file -->
+  <script type="text/ng-template" id="my_component.html">
+    <input class="form-control" ng-model='$ctrl.name'><br><span>Hello {{$ctrl.name}}, I'm {{$ctrl.myName}}!</span>
+  </script>
+
+
+
+  <!-- This script can be also written as:
+    <script src="/app.js"></script>
+  if the file `app.js` is located in root directory of the server,
+  which should contain the AngularJS code below
+-->
+  <script>
+    var app = angular.module('myApp', ['ui.bootstrap']); // injected dependancies
+
+    app.component("helloWorld", {
+      templateUrl: "my_component.html",
+      /* component template */
+      bindings: {
+        name: '@'
+      },
+      controller: function() {
+        this.myName = 'Karolyn'; // use of `this` requires `$ctrl` in the template HTML
+      }
+    });
+  </script>
+
+</body>
+
+</html>
