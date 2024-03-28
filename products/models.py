@@ -3,7 +3,15 @@ from django.utils.timezone import now
 from django.db.models import JSONField
 
 
-class Product(models.Model):
+class Timestamp(models.Model):
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        abstract = True
+
+
+class Product(Timestamp):
     title = models.CharField(max_length=70)
     image = models.CharField(max_length=250)
     likes = models.IntegerField(default=0)
@@ -12,12 +20,11 @@ class Product(models.Model):
         return self.title[:30]
 
 
-class Location(models.Model):
+class Location(Timestamp):
     name = models.CharField(max_length=150)
     parent = models.ForeignKey('self', on_delete=models.CASCADE, related_name='location', blank=True, null=True)
     image = models.ImageField(upload_to='location/%y/%m', null=True, blank=True)
     is_active = models.BooleanField(default=True)
-    created_date = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         ordering = ['-id']
@@ -32,7 +39,7 @@ class Location(models.Model):
         return Location.objects.filter(parent=self).count()
 
 
-class Listing(models.Model):
+class Listing(Timestamp):
     class SaleType(models.TextChoices):
         FOR_SALE = 'For Sale'
         FOR_RENT = 'For Rent'
@@ -59,7 +66,6 @@ class Listing(models.Model):
     gallery = JSONField(blank=True, null=True, default=None)
     is_publish = models.BooleanField(default=False)
     is_available = models.BooleanField(default=True)
-    created_date = models.DateTimeField(now)
 
     def __str__(self):
         return f"{self.title} and Price: {self.price}"

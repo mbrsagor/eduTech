@@ -9,11 +9,20 @@ from .serializers import ProductSerializer, LocationSerializer
 
 
 class LocationViewSet(viewsets.ModelViewSet):
+    """
+    Name: Location API View
+    Desc:
+    URL: /api/v1/
+    """
     serialize_class = LocationSerializer
     queryset = Location.objects.all()
 
 
 class ProductViewSet(viewsets.ViewSet):
+    """
+    Name: Product API View
+    Desc: Custom product CRUD API endpoint
+    """
     def list(self, request):
         products = Product.objects.all()
         serializer = ProductSerializer(products, many=True)
