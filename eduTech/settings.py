@@ -45,7 +45,6 @@ ALLOWED_HOSTS = env('ALLOWED_HOSTS')
 
 
 # Application definition
-
 DEFAULT_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -60,7 +59,12 @@ LOCAL_APPS = [
     'user',
 ]
 
-INSTALLED_APPS = DEFAULT_APPS + LOCAL_APPS
+# Third party apps
+THIRD_PARTY_APPS = [
+    'django_filters',
+]
+
+INSTALLED_APPS = DEFAULT_APPS + LOCAL_APPS + THIRD_PARTY_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
