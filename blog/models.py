@@ -5,7 +5,7 @@ from user.models import Timestamp, User
 class Category(Timestamp):
     name = models.CharField(max_length=100)
     is_active = models.BooleanField(default=True)
-    icons = models.FileField(upload_to='category', blank=True, null=True)
+    icon = models.FileField(upload_to='category', blank=True, null=True)
 
     def __str__(self):
         return self.name

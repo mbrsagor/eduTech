@@ -1,7 +1,10 @@
 from django.urls import path
-from .views import DashboardView
+from blog.views import dashboard_view, category_view
 
 
 urlpatterns = [
-    path('dashboard/', DashboardView.as_view(), name='dashboard'),
+    # Dashboard
+    path('dashboard/', dashboard_view.DashboardView.as_view(), name='dashboard'),
+    # Categories
+    path('create-category', category_view.CreateCategoryView.as_view(), name='create_category'),
 ]
