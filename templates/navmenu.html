@@ -5,7 +5,7 @@
             <span data-key="t-dashboard">Dashboard</span>
         </a>
     </li>
-    <li>
+    {% comment %} <li>
         <a href="javascript: void(0);" class="has-arrow">
             <i class="mdi mdi-equal-box font-size-18"></i>
             <span data-key="t-apps">Service</span>
@@ -14,8 +14,8 @@
             <li><a href="{% url 'create_service' %}">Create Service</a></li>
             <li><a href="{% url 'services' %}" data-key="t-inbox">Services</a></li>
         </ul>
-    </li>
-    <li>
+    </li> {% endcomment %}
+    {% comment %} <li>
         <a href="javascript: void(0);" class="has-arrow">
             <i class="mdi mdi-shopping font-size-18"></i>
             <span data-key="t-apps">Order</span>
@@ -24,7 +24,7 @@
             <li><a href="{% url 'create_order' %}" data-key="t-inbox">Create Order</a></li>
             <li><a href="#" data-key="t-inbox">Orders</a></li>
         </ul>
-    </li>
+    </li> {% endcomment %}
     <li>
         <a href="javascript: void(0);" class="has-arrow">
             <i class="mdi mdi-human-child font-size-18"></i>

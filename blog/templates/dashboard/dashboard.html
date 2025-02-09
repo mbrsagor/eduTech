@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Dashboard {% endblock %}
+
+{% block content %}
+    {% include 'dashboard/counter.html' %}
+    {% comment %} {% include 'dashboard/chart.html' %} {% endcomment %}
+    {% include 'dashboard/order_table.html' %}
+{% endblock %}
