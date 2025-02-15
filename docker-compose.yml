@@ -4,13 +4,16 @@ services:
   web:
     build: .
     restart: always
-    command: python /code/manage.py runserver 0.0.0.0:8000
+    command: >
+      sh -c "python /code/manage.py makemigrations user && python /code/manage.py migrate && python /code/manage.py runserver 0.0.0.0:8000"
     volumes:
       - .:/code
     ports:
       - 8000:8000
     depends_on:
-      - db
+      db:
+        condition: service_healthy
+
   db:
     image: postgres:13
     restart: always
@@ -20,6 +23,11 @@ services:
       - "POSTGRES_HOST_AUTH_METHOD=trust"
     ports:
       - 5433:5432
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "postgres"]
+      interval: 10s
+      retries: 5
+      start_period: 30s
 
 volumes:
   postgres_data:

@@ -110,7 +110,7 @@ class SignInView(LoginView):
 
     def get_success_url(self):
         url = self.get_redirect_url()
-        return url or resolve_url('/dashboard/')
+        return url or resolve_url('/blog/dashboard/')
 
     def form_valid(self, form):
         remember_me = form.cleaned_data['remember_me']
