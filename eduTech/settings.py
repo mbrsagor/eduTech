@@ -55,7 +55,6 @@ DEFAULT_APPS = [
 # Local apps
 LOCAL_APPS = [
     'user',
-    'blog',
 ]
 
 # Third party apps
