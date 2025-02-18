@@ -9,7 +9,7 @@ services:
     volumes:
       - .:/code
     ports:
-      - 8000:8000
+      - "8000:8000"
     depends_on:
       db:
         condition: service_healthy
@@ -22,7 +22,7 @@ services:
     environment:
       - "POSTGRES_HOST_AUTH_METHOD=trust"
     ports:
-      - 5433:5432
+      - "5433:5432"
     healthcheck:
       test: ["CMD", "pg_isready", "-U", "postgres"]
       interval: 10s
