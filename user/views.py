@@ -110,7 +110,7 @@ class SignInView(LoginView):
 
     def get_success_url(self):
         url = self.get_redirect_url()
-        return url or resolve_url('/blog/dashboard/')
+        return url or resolve_url('/')
 
     def form_valid(self, form):
         remember_me = form.cleaned_data['remember_me']
@@ -129,7 +129,7 @@ class SignOutView(View):
 
     def get(self, request):
         logout(request)
-        return redirect('/user/signin/')
+        return redirect('/signin/')
 
 
 @login_required
@@ -186,7 +186,7 @@ def profile_update_view(request):
     return render(request, template_name, context)
 
 
-@method_decorator(login_required(login_url='/user/signin/'), name='dispatch')
+@method_decorator(login_required(login_url='/signin/'), name='dispatch')
 class AuthLockScreenView(LoginView):
     """
     Name: Auth lock screen login without username.
@@ -207,7 +207,7 @@ class AuthLockScreenView(LoginView):
         return super(AuthLockScreenView, self).form_valid(form)
 
 
-@method_decorator(login_required(login_url='/user/signin/'), name='dispatch')
+@method_decorator(login_required(login_url='/signin/'), name='dispatch')
 class SignOutScreenLockView(View):
     """
     Name: Lock screen view
@@ -220,7 +220,7 @@ class SignOutScreenLockView(View):
         return redirect('/user/auth-lock-screen/')
 
 
-@method_decorator(login_required(login_url='/user/signin/'), name='dispatch')
+@method_decorator(login_required(login_url='/signin/'), name='dispatch')
 class UserListView(FilterView, generic.ListView):
     """List of users with filter"""
     model = User
@@ -230,7 +230,7 @@ class UserListView(FilterView, generic.ListView):
     filterset_fields = ['name', 'email', 'phone', 'role']
 
 
-@method_decorator(login_required(login_url='/user/signin/'), name='dispatch')
+@method_decorator(login_required(login_url='/signin/'), name='dispatch')
 class UserCreateByAdminView(SuccessMessageMixin, generic.CreateView):
     """
     User creating using CMS
@@ -251,7 +251,7 @@ class UserCreateByAdminView(SuccessMessageMixin, generic.CreateView):
         return super().form_valid(form)
 
 
-@method_decorator(login_required(login_url='/user/signin/'), name='dispatch')
+@method_decorator(login_required(login_url='/signin/'), name='dispatch')
 class UserUpdateViewFormAdmin(SuccessMessageMixin, generic.UpdateView):
     """
     Super admin can update any user
@@ -265,7 +265,7 @@ class UserUpdateViewFormAdmin(SuccessMessageMixin, generic.UpdateView):
         return reverse('update_user', kwargs={'pk': self.object.id})
 
 
-@method_decorator(login_required(login_url='/user/signin/'), name='dispatch')
+@method_decorator(login_required(login_url='/signin/'), name='dispatch')
 class UserDeleteView(SuccessMessageMixin, generic.DeleteView):
     """
     User can delete from CMS
@@ -274,3 +274,7 @@ class UserDeleteView(SuccessMessageMixin, generic.DeleteView):
     success_url = '/user/users/'
     success_message = 'The use has been deleted.'
     template_name = 'common/delete_confirm.html'
+
+
+class DashboardView(generic.TemplateView):
+    template_name = 'dashboard/dashboard.html'
