@@ -278,3 +278,6 @@ class UserDeleteView(SuccessMessageMixin, generic.DeleteView):
 
 class DashboardView(generic.TemplateView):
     template_name = 'dashboard/dashboard.html'
+
+class ClassificationProcessView(generic.TemplateView):
+    template_name = 'classification_process/classification_process.html'
