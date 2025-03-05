@@ -4,22 +4,88 @@
 {% block title %} classification process {% endblock %}
 
 {% block content %}
+
+    <style>
+        img {
+            width: 100%;
+        }
+    </style>
+
     <h2>Welcome, {{ request.user.name }}</h2>
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-5">
             <div class="card mt-5">
-                <div class="card-header">
-                    <h4 class="card-title">Empowering Educators with Smart Technology</h4>
-                </div>
                 <div class="card-body">
-                    <p class="card-text">At EduBloom, we understand the challenges educators face in crafting
-                        assessments that
-                        truly measure student learning. Our innovative web-based application harnesses the power of
-                        advanced machine learning algorithms to automatically classify exam questions according to
-                        Bloom's Taxonomy. This ensures that your assessments are not
-                        only accurate but also aligned with educational standards and learning objectives.</p>
+                    <img src="{% static 'images/screenshot1.png' %}" alt="">
                 </div>
             </div>
         </div>
+        <div class="col-md-7">
+            <div class="card mt-5">
+                <div class="card-header">
+                    <h4 class="card-title">Classification Process</h4>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">
+                        Our web-based application leverages sophisticated machine
+                        learning and deep learning technologies to seamlessly classify
+                        exam questions into Bloom's Taxonomy categories. By analyzing
+                        the structure and content of each question, EduBloom ensures
+                        that assessments are not just standardized but are also aligned
+                        with educational goals and learning outcomes. This automated
+                        classification not only enhances the accuracy of determining
+                        cognitive levels but also significantly reduces the administrative
+                        burden on educators, as it ensures that their assessments are
+                        robust, comprehensive, and truly reflective of students’ learning
+                        needs.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h1 class="card-title">How EduBloom works?</h1>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <img src="{% static 'images/screenshot2.png' %}" alt="">
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">Step 1 Question Input</h2>
+                    <p class="card-text">
+                        Input: Users upload the question in a supported format such as plain text.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title mb-3">Step 2 Question Validation</h2>
+                    <p class="card-text">
+                        The system initially verifies if the question aligns with Bloom's Taxonomy grading criteria. If
+                        the question does not include valid Bloom's Taxonomy keywords, the system will return the
+                        message: <br/> <br/> "The question above does not contain any valid Bloom's Taxonomy keywords."
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <img src="{% static 'images/screenshot3.png' %}" alt="">
+        </div>
+    </div>
+    <div class="row mt-4">
+        <img src="{% static 'images/screenshot5.png' %}" alt="">
+        <img src="{% static 'images/screenshot6.png' %}" alt="">
+        <img src="{% static 'images/screenshot7.png' %}" alt="">
+        <img src="{% static 'images/screenshot8.png' %}" alt="">
+        <img src="{% static 'images/screenshot9.png' %}" alt="">
+        <img src="{% static 'images/screenshot10.png' %}" alt="">
+        <img src="{% static 'images/screenshot11.png' %}" alt="">
     </div>
 {% endblock %}
