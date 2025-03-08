@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Automated Question Classifier {% endblock %}
+
+{% block content %}
+
+    <style>
+        .box_main {
+            background: #D9D9D9;
+            padding: 90px 0;
+            border-radius: 12px;
+        }
+
+        .box-content {
+            max-width: 420px;
+            margin: auto;
+        }
+
+        .box-text {
+            text-align: justify !important;
+        }
+
+        .search {
+            max-width: 420px;
+            margin: auto;
+        }
+
+        .search_style {
+            padding: 15px;
+            background: #fff;
+            border-radius: 15px;
+        }
+
+        .custom_btn_class {
+            width: 100%;
+            padding: 15px 0;
+            border-radius: 15px;
+        }
+    </style>
+
+    <div class="row box_main mt-5">
+        <div class="col-md-12 text-center">
+            <div class="box">
+                <h1 class="box-title">Automated Question Classifier</h1>
+                <div class="box-content">
+                    <p class="box-text">Our Question Analysis Tool is an innovative solution designed to assist
+                        educators
+                        in the automatic classification of exam questions according to Bloom’s Taxonomy. EduBloom
+                        classifies
+                        each question intoone of the six Bloom’s levels: Knowledge, Comprehension, Application,
+                        Analysis,
+                        Synthesis, and Evaluation.
+
+                    </p>
+                </div>
+            </div>
+            <div class="search mt-2">
+                <input type="search" class="form-control mb-3 search_style" placeholder="question"/>
+                <button class="btn btn-primary btn-sm custom_btn_class">Analyse</button>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
