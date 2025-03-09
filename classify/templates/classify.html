@@ -3,16 +3,59 @@
 {% block title %}Classify{% endblock %}
 
 {% block content %}
-    <div class="row">
+    <style>
+        .box_main {
+            background: #D9D9D9;
+            padding: 90px 0;
+            border-radius: 12px;
+        }
+
+        .box-content {
+            max-width: 420px;
+            margin: auto;
+        }
+
+        .box-text {
+            text-align: justify !important;
+        }
+
+        .search {
+            max-width: 420px;
+            margin: auto;
+        }
+
+        .search_style {
+            padding: 15px;
+            background: #fff;
+            border-radius: 15px;
+        }
+
+        .custom_btn_class {
+            width: 100%;
+            padding: 15px 0;
+            border-radius: 15px;
+        }
+    </style>
+    <div class="row box_main mt-5">
         <div class="col-md-12">
-            <h2>Question Classifier</h2>
-            <form method="POST">
+            <h1 class="box-title text-center">Automated Question Classifier</h1>
+            <div class="box-content">
+                <p class="box-text">Our Question Analysis Tool is an innovative solution designed to assist
+                    educators
+                    in the automatic classification of exam questions according to Bloom’s Taxonomy. EduBloom
+                    classifies
+                    each question intoone of the six Bloom’s levels: Knowledge, Comprehension, Application,
+                    Analysis,
+                    Synthesis, and Evaluation.
+
+                </p>
+            </div>
+            <form class="search mt-2" method="POST">
                 {% csrf_token %}
                 <div class="form-group">
-                    <label for="question">Enter your question:</label>
-                    <input type="text" id="question" name="question" class="form-control" placeholder="Ask a question">
+                    <input type="text" id="question" name="question" class="form-control mb-3 search_style" placeholder="Ask a question">
                 </div>
-                <button class="btn btn-primary btn-sm" type="submit">Classify</button>
+                <button class="btn btn-primary btn-sm" type="submit">question</button>
             </form>
             {% if prediction %}
                 <h3>Prediction: {{ prediction }}</h3>
