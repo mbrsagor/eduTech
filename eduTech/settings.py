@@ -55,7 +55,7 @@ DEFAULT_APPS = [
 # Local apps
 LOCAL_APPS = [
     'user',
-    'dashboard',
+    'classify',
 ]
 
 # Third party apps

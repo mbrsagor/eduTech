@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Classify{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Question Classifier</h2>
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="question">Enter your question:</label>
+                    <input type="text" id="question" name="question" class="form-control" placeholder="Ask a question">
+                </div>
+                <button class="btn btn-primary btn-sm" type="submit">Classify</button>
+            </form>
+            {% if prediction %}
+                <h3>Prediction: {{ prediction }}</h3>
+            {% elif form.errors %}
+                <p class="text-danger">There was an error with the form submission. Please try again.</p>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
