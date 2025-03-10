@@ -12,5 +12,5 @@ def classify_question(request):
         question = form.cleaned_data["question"]
         prediction = predict_question_level(question)
         # Save history
-        History.objects.create(title=question)
+        History.objects.create(title=question, classification=prediction)
     return render(request, "classify.html", {"form": form, "prediction": prediction})
