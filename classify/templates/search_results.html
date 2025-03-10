@@ -1,0 +1,184 @@
+{% extends 'base.html' %}
+
+{% block title %}Blooms Level{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h1 class="card-title">Blooms Level</h1>
+                </div>
+                {% if prediction == "SYNTHESIS" %}
+                    <div class="card-body">
+                        <h2 class="card-title">{{ prediction }}</h2>
+                        <div>
+                            <h3>At the {{ prediction }} level, learners are expected to:</h3>
+                            <ul>
+                                <li>Combine elements or parts to form a coherent or functional whole.</li>
+                                <li>Create new patterns, structures, or ideas by integrating knowledge from various
+                                    sources.
+                                </li>
+                                <li>Demonstrate creativity and originality in producing new solutions, designs, or
+                                    concepts.
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Key Characteristics of {{ prediction }} Level</h3>
+                            <ul>
+                                <li>Focus: Creativity, innovation, and the ability to develop something new.</li>
+                                <li>Scope: Requires a deep understanding of concepts and the ability to organize and
+                                    structure information into new formats or ideas.
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Verbs / Keywords for {{ prediction }} Level</h3>
+                            <p>Assemble | Categorize | Combine | Compose | Construct</p>
+                            <p>Create | Design | Develop | Formulate | Integrate</p>
+                            <p>Invent | Organize | Rewrite</p>
+                        </div>
+                    </div>
+                {% elif prediction == "COMPREHENSION" %}
+                    <div class="card-body">
+                        <h2 class="card-title">{{ prediction }}</h2>
+                        <div>
+                            <h3>At the {{ prediction }} level, learners are expected to:</h3>
+                            <ul>
+                                <li>Understand and explain ideas or concepts in their own words.</li>
+                                <li>Interpret and summarize key points.</li>
+                                <li>Translate information from one format to another.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Key Characteristics of {{ prediction }} Level</h3>
+                            <ul>
+                                <li>Focus: Understanding meaning rather than simple recall.</li>
+                                <li>Scope: Involves summarizing, paraphrasing, and interpreting information.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Verbs / Keywords for {{ prediction }} Level</h3>
+                            <p>Classify | Describe | Discuss | Explain | Express</p>
+                            <p>Identify | Illustrate | Interpret | Recognize | Summarize</p>
+                            <p>Translate | Paraphrase | Compare</p>
+                        </div>
+                    </div>
+                {% elif prediction == "EVALUATE" %}
+                    <div class="card-body">
+                        <h2 class="card-title">{{ prediction }}</h2>
+                        <div>
+                            <h3>At the {{ prediction }} level, learners are expected to:</h3>
+                            <ul>
+                                <li>Make judgments about the value of ideas, solutions, or materials based on criteria
+                                    and standards.
+                                </li>
+                                <li>Assess the effectiveness of concepts, theories, or methodologies.</li>
+                                <li>Justify decisions by providing evidence and reasoning.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Key Characteristics of {{ prediction }} Level</h3>
+                            <ul>
+                                <li>Focus: Critical thinking, reasoning, and the ability to assess the quality or
+                                    effectiveness of something.
+                                </li>
+                                <li>Scope: Requires deep analytical skills to compare, critique, and validate
+                                    information before forming conclusions.
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Verbs / Keywords for {{ prediction }} Level</h3>
+                            <p class="mb-0">Judge | Appraise | Assess | Compare | Conclude</p>
+                            <p class="mb-0">Critique | Defend | Estimate | Justify | Measure</p>
+                            <p>Rate | Recommend | Score | Support | Validate</p>
+                        </div>
+                    </div>
+                {% elif prediction == "ANALYSIS" %}
+                    <div class="card-body">
+                        <h2 class="card-title">{{ prediction }}</h2>
+                        <div>
+                            <h3>At the {{ prediction }} level, learners are expected to:</h3>
+                            <ul>
+                                <li>Break down concepts into components and examine relationships.</li>
+                                <li>Differentiate between facts, inferences, and opinions.</li>
+                                <li>Identify patterns, trends, and underlying structures.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Key Characteristics of {{ prediction }} Level</h3>
+                            <ul>
+                                <li>Focus: Examining components, identifying causes, and evaluating relationships.</li>
+                                <li>Scope: Involves comparing, contrasting, and questioning information.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Verbs / Keywords for {{ prediction }} Level</h3>
+                            <p class="mb-0">Analyze | Break down | Categorize | Compare | Contrast</p>
+                            <p class="mb-0">Criticize | Differentiate | Distinguish | Examine | Inspect</p>
+                            <p>Investigate | Question | Test</p>
+                        </div>
+                    </div>
+                {% elif prediction == "KNOWLEDGE" %}
+                    <div class="card-body">
+                        <h2 class="card-title">{{ prediction }}</h2>
+                        <div>
+                            <h3>At the {{ prediction }} level, learners are expected to:</h3>
+                            <ul>
+                                <li>Recall or recognize facts, terms, and basic concepts.</li>
+                                <li>Memorize definitions, formulas, or lists.</li>
+                                <li>Retrieve previously learned information without requiring deeper understanding.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Key Characteristics of {{ prediction }} Level</h3>
+                            <ul>
+                                <li>Focus: Basic recall of information, facts, and terms.</li>
+                                <li>Scope: Does not require manipulation or application of knowledge, only recognition
+                                    and recollection.
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Verbs / Keywords for {{ prediction }} Level</h3>
+                            <p class="mb-0">Define | Identify | Label | List | Match</p>
+                            <p class="mb-0">Memorize | Name | Recall | Recognize | Repeat</p>
+                            <p> Reproduce | State | Describe</p>
+                        </div>
+                    </div>
+                {% elif prediction == "APPLY" %}
+                    <div class="card-body">
+                        <h2 class="card-title">{{ prediction }}</h2>
+                        <div>
+                            <h3>At the {{ prediction }} level, learners are expected to:</h3>
+                            <ul>
+                                <li>Use learned knowledge in new situations.</li>
+                                <li>Apply rules, methods, and concepts to solve problems.</li>
+                                <li>Implement procedures and techniques in real-world scenarios.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Key Characteristics of {{ prediction }} Level</h3>
+                            <ul>
+                                <li>Focus: Practical use of knowledge.</li>
+                                <li>Scope: Involves problem-solving, demonstrating, and implementing concepts.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Verbs / Keywords for {{ prediction }} Level</h3>
+                            <p class="mb-0">Apply | Change | Compute | Construct | Demonstrate</p>
+                            <p class="mb-0">Examine | Modify | Operate | Practice | Solve</p>
+                            <p>Use | Implement | Experiment</p>
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="text-danger p-2">
+                        <p>The question above does not have any valid Bloom Taxonomy keywords</p>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
