@@ -282,7 +282,3 @@ class DashboardView(generic.TemplateView):
 
 class ClassificationProcessView(generic.TemplateView):
     template_name = 'classification_process/classification_process.html'
-
-
-class QuestionClassifierView(generic.TemplateView):
-    template_name = 'question_classifier/question_classifier.html'
