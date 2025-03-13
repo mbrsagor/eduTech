@@ -9,6 +9,16 @@
         img {
             width: 100%;
         }
+
+        .thumbnail img {
+            width: 60%;
+            margin: auto;
+        }
+
+        .bg_color {
+            background: #62C6C6;
+            color: #fff;
+        }
     </style>
 
     <h2>Welcome, {{ request.user.name }}</h2>
@@ -65,7 +75,7 @@
     <div class="row mt-4">
         <div class="col-md-6">
             <div class="card">
-                <div class="card-body">
+                <div class="card-body bg_color">
                     <h2 class="card-title mb-3">Step 2 Question Validation</h2>
                     <p class="card-text">
                         The system initially verifies if the question aligns with Bloom's Taxonomy grading criteria. If
@@ -79,13 +89,57 @@
             <img src="{% static 'images/screenshot3.png' %}" alt="">
         </div>
     </div>
-    <div class="row mt-4">
-        <img src="{% static 'images/screenshot5.png' %}" alt="">
-        <img src="{% static 'images/screenshot6.png' %}" alt="">
-        <img src="{% static 'images/screenshot7.png' %}" alt="">
-        <img src="{% static 'images/screenshot8.png' %}" alt="">
-        <img src="{% static 'images/screenshot9.png' %}" alt="">
-        <img src="{% static 'images/screenshot10.png' %}" alt="">
-        <img src="{% static 'images/screenshot11.png' %}" alt="">
+    <div class="row mt-5">
+        <div class="col-md-12">
+            <h2>Step 3 Pre Processing </h2>
+        </div>
     </div>
+    <!---- start --->
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <div class="thumbnail">
+                <img src="https://s3-alpha-sig.figma.com/img/abbf/60ba/dea395e34b0662b201518be7321f0371?Expires=1742774400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=A7SJ4SebpoNpApSe6KtsTOg6TQecxXMr-XKAtYkwiCy~X5r629pX~okWddXgE-1VB-xhTjTsTltf~AMbUrHoK0LI67nE1W874IvD6h-SpICD3fuH8gWUeLks5cYbV~uT6ovPWG6GW~unk4lxaEZ6rwvENBAs1qr2ly93L7rfyARCRHoC5RREUCoipzWRlP5weZj1dcizTwFvC51txPJR7B8XVUkkJ0fb73m1QIHKinnt9LVBGgcwdOtdWyza4JCHJxE0ZPJsiIyUVjppRRDycSFRpAE7lrdpxKu3YyH2JhTK11yEQbPx6NmU7ERjyxN1B-2~UUzao4elCO6qWDFljg__"
+                     alt="">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body bg_color">
+                    <h2 class="card-title mb-3">Lower Case Conversion</h2>
+                    <p class="card-text">
+                        Converting all characters to lowercase:
+                        <br/><b>Output:</b> <br/> <br/>
+
+                        suggest any two (2) efforts that organization may perform in order to discourage unethical
+                        behavior.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---- end --->
+    <!---- start --->
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <div class="thumbnail">
+                <img src="https://s3-alpha-sig.figma.com/img/34a9/9a54/b193a155b7a86bfe5b9d683c890cdea9?Expires=1742774400&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=FmL6K3~sRPZ56h0~aZ~gD9hZff-zK5EYHt1fZsKxHuX2cydZrW~UnPgitrcFmP9KEPUWGBm682Mp5yR~KNQbKMbrhX-oOFH~SSZnDDq86ZC3HKNhLXLWK7ujZEPdkiB~kh8zc23IB32yHluLEQLMsKGxsbDhOfnYRr7ZXsKNOby-UXoxqb2sMKFXM-H66Oyh5O7FXL1yL8NyguFN6Z3lG8C87sqreyfYqCIV642xJ7kMT0A1EqPq-oipbkC-yZOGGSvVS9rP1qYUgDJKEeVjVEnkRLOWhUZnV1i6wKJU8qtE1ObsNs19jPw1yPuveo8Jz6YfL~83KfBLCcsbCHiZKQ__"
+                     alt="">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body bg_color">
+                    <h2 class="card-title mb-3">Number to Word Conversion</h2>
+                    <p class="card-text">
+                        Converting numbers into words for consistency:
+                        <br/><b>Output:</b> <br/> <br/>
+
+                        suggest any two (two) efforts that organization may perform in order to discourage unethical
+                        behavior.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---- end --->
 {% endblock %}
