@@ -1,5 +1,5 @@
 # EduTech
-> Education Management System for university students project.
+> Python popular framework Django machine larning (ML) project for university bloom university at Malaysia.
 
 ### Setup
 
@@ -26,6 +26,7 @@ If you successfully create the virtualenv then activate:
 After that, you may run the `requirements.txt` file following the command:
 ```bash
 pip install -r requirements.txt
+./manage.py makemigrations user
 ./manage.py migrate
 ./manage.py runserver
 ```

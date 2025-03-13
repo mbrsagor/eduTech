@@ -276,9 +276,11 @@ class UserDeleteView(SuccessMessageMixin, generic.DeleteView):
     template_name = 'common/delete_confirm.html'
 
 
+@method_decorator(login_required(login_url='/signin/'), name='dispatch')
 class DashboardView(generic.TemplateView):
     template_name = 'dashboard/dashboard.html'
 
 
+@method_decorator(login_required(login_url='/signin/'), name='dispatch')
 class ClassificationProcessView(generic.TemplateView):
     template_name = 'classification_process/classification_process.html'
