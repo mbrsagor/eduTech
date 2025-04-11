@@ -6,7 +6,7 @@
 The following steps will walk you through installation on a Mac. Linux should be similar.
 It's also possible to develop on a Windows machine, but I have not documented the steps.
 If you've developed Django apps on Windows, you should have little problem getting
-up and running.
+up and running. But you guyes are try to use Linux operation system to use this application.
 
 #### Dependencies
 ###### Prerequisites
@@ -37,3 +37,5 @@ docker-compose build
 docker-compose up
 ```
 If running fails, please download ``nltk_data'' locally to your system.
+
+## Happy coding :wink:
