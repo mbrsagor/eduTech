@@ -38,7 +38,7 @@ requests==2.33.0
 rich==13.9.4
 scikit-learn==1.6.1
 scipy==1.15.2
-setuptools==78.1.1
+setuptools==83.0.0
 shellingham==1.5.4
 six==1.17.0
 smart-open==7.1.0
